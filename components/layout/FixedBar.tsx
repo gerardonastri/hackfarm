@@ -21,10 +21,10 @@ const FixedBar = () => {
     },
   ];
   return (
-    <div className="color-opaced flex items-center gap-x-2 fixed top-5 rounded-[1.5rem] px-4 py-2 left-[50%] translate-x-[-50%]">
+    <div className="color-opaced flex items-center gap-x-1 fixed top-5 rounded-[1.5rem] px-3 py-1 left-[50%] translate-x-[-50%]">
       {links.map((item, i) => (
         <Link
-          className={`px-4 py-1 text-white rounded-[1.5rem] font-secondary ${
+          className={`px-3 py-1 text-white rounded-[1.5rem] text-[15px] font-secondary ${
             item.link === pathname.split("/")[1] ? "bg-[#88A001]" : ""
           }`}
           href={`/${item.link}`}
