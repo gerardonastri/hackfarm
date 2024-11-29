@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
+import localFont from "next/font/local";
 import { Poppins } from "next/font/google";
 import "./globals.css";
+const myFont = localFont({ src: "./font.otf" });
 
 const poppins = Poppins({
   style: "normal",
@@ -41,7 +43,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${poppins.variable} font-poppins antialiased`}>
+      <body
+        className={`${myFont.className} ${poppins.variable} font-poppins  antialiased`}
+      >
         {children}
       </body>
     </html>
