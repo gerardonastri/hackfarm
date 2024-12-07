@@ -64,6 +64,7 @@ export default function CategoriesSection() {
                             fill
                             className="object-cover"
                           />
+                          <div className="absolute inset-0 bg-gradient-to-b from-black/40 to-black/80" />
                           <button
                             onClick={() => setExpandedId(null)}
                             className="absolute top-4 right-4 bg-[#c8ff00] rounded-full p-2 hover:bg-[#a3cc00] transition-colors"
@@ -109,6 +110,7 @@ export default function CategoriesSection() {
                       fill
                       className="object-cover"
                     />
+                    <div className="absolute inset-0 bg-gradient-to-b from-black/40 to-black/80" />
                     <div className="absolute top-4 right-4 bg-[#c8ff00] rounded-full p-2 hover:bg-[#a3cc00] transition-colors">
                       <MoveUpRight className="w-4 h-4 text-black" />
                     </div>
