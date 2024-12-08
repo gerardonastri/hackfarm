@@ -67,19 +67,21 @@ export default function Phaser() {
           variants={container}
           initial="hidden"
           animate="show"
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
+          className="grid items-end grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-12"
         >
           {editions.map((edition) => (
             <motion.div
               key={edition.id}
               variants={item}
-              className="relative aspect-square rounded-lg overflow-hidden group cursor-pointer"
+              className={`${
+                edition.id === 1 || edition.id === 4 ? "h-[350px]" : "h-[280px]"
+              } w-full relative aspect-square rounded-3xl overflow-hidden group cursor-pointer`}
             >
               <Image
                 src={edition.image}
                 alt={`Edition ${edition.year}`}
                 fill
-                className="object-cover transition-transform duration-300 group-hover:scale-110"
+                className="object-cover rounded-3xl transition-transform duration-300 group-hover:scale-110"
               />
               <div className="absolute inset-0 bg-black/40 transition-opacity duration-300 group-hover:opacity-30" />
               <div className="absolute inset-0 flex items-center justify-center">
@@ -92,6 +94,63 @@ export default function Phaser() {
               </div>
             </motion.div>
           ))}
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="space-y-8 mt-[100px]"
+        >
+          <h2 className="text-4xl font-bold text-white mb-8">
+            Più informazioni
+          </h2>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-16 text-gray-300">
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="text-justify leading-relaxed text-white xl:max-w-[90%] font-secondary text-sm"
+            >
+              La Phaser Game Jam - Hackathon è un evento educativo innovativo
+              progettato per ispirare e coinvolgere giovani sviluppatori nella
+              creazione dei videogiochi. Questo evento offre un&apos;esperienza
+              unica di apprendimento pratico e rappresenta un&apos;opportunità
+              unica per apprendere e mettere in pratica competenze tecniche in
+              un contesto stimolante e creativo. Utilizzando Phaser JS, un
+              framework JavaScript open-source, una tecnologia avanzata che
+              permette di sviluppare videogiochi interattivi e accattivanti.
+              Durante la competizione, i partecipanti lavorano in team per
+              creare progetti originali che mettono in luce il loro talento e la
+              loro creatività.
+            </motion.p>
+
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              className="text-justify leading-relaxed text-white font-secondary text-sm"
+            >
+              L&apos;evento è creare un videogioco originale e funzionale in un
+              tempo limitato, dimostrando creatività, capacità di
+              problem-solving e lavoro di squadra. Questa sfida non è solo
+              un&apos;attività divertente, ma anche un&apos;importante
+              opportunità di apprendimento pratico in un ambiente collaborativo
+              e dinamico. La Phaser Game Jam - Hackathon offre ai partecipanti
+              la possibilità di: Sviluppare competenze tecniche (HTML5,
+              JavaScript, framework specifici) Migliorare degli Skill di Sistema
+              (DBGA), attraverso il Cooperative Learning Potenziare le capacità
+              di Problem Solving e Decisione Esplorare la logica e la struttura
+              base dello sviluppo di videogiochi Imparare a gestire il tempo e
+              le risorse formando nuove, sport e imparando per garantire
+              un&apos;esperienza di crescita in più direzioni. Inoltre,
+              l&apos;evento si svolge in un formato stimolante e competitivo che
+              incoraggia i partecipanti a dare il situazioni, l&apos;interazione
+              tra/con, misurandosi un tutto impegno verso l&apos;eccellenza in
+              via unica in modo libero.
+            </motion.p>
+          </div>
         </motion.div>
       </div>
     </main>
