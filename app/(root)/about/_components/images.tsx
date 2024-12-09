@@ -3,7 +3,7 @@ import React from "react";
 
 const AboutImages = () => {
   return (
-    <div className="flex w-fulf items-end justify-between gap-10 mt-12">
+    <div className="flex flex-col md:flex-row w-full md:items-end md:justify-between gap-10 mt-12">
       <div className="relative w-full h-[350px] rounded-3xl">
         <Image
           src="/hero.jpg"
@@ -22,7 +22,7 @@ const AboutImages = () => {
         />
         <div className="overlay rounded-3xl"></div>
       </div>
-      <div className="relative w-full h-[350px] rounded-3xl">
+      <div className="relative  w-full h-[350px] rounded-3xl">
         <Image
           src="/hero.jpg"
           alt="about images"

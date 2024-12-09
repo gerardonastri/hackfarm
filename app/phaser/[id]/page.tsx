@@ -56,7 +56,12 @@ const item = {
   show: { opacity: 1, y: 0 },
 };
 
-export default function page() {
+export default async function page({
+  params,
+}: {
+  params: Promise<{ id?: string }>;
+}) {
+  const year = (await params).id;
   return (
     <main className="max-w-[1600px] pt-[60px] mx-auto px-4 lg:px-[3rem]">
       <motion.div
@@ -93,7 +98,7 @@ export default function page() {
                 color: "transparent",
               }}
             >
-              2021
+              {year}
             </motion.h2>
             <motion.p
               initial={{ opacity: 0, y: 10 }}

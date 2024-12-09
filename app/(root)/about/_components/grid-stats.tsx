@@ -53,7 +53,7 @@ function StatItem({ endNumber, label, duration = 2 }: StatItemProps) {
 
 export default function StatsGrid() {
   return (
-    <div className="rounded-3xl w-full md:w-[500px] mt-8 bg-[#282828] flex items-center py-4 px-4 z-[50]">
+    <div className="rounded-3xl w-[90%] mx-auto md:mx-0 md:w-[500px] mt-8 bg-[#282828] flex items-center py-4 px-4 z-[50]">
       <div className="grid grid-cols-2 gap-4 max-w-lg w-full ">
         <StatItem endNumber={7} label="Eventi per Phase Game Jam" />
         <StatItem endNumber={700} label="Partecipanti ogni anno" />

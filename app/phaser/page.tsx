@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
 
 const editions = [
   { id: 1, year: "2k21", image: "/image.jpg" },
@@ -77,21 +78,23 @@ export default function Phaser() {
                 edition.id === 1 || edition.id === 4 ? "h-[350px]" : "h-[280px]"
               } w-full relative aspect-square rounded-3xl overflow-hidden group cursor-pointer`}
             >
-              <Image
-                src={edition.image}
-                alt={`Edition ${edition.year}`}
-                fill
-                className="object-cover rounded-3xl transition-transform duration-300 group-hover:scale-110"
-              />
-              <div className="absolute inset-0 bg-black/40 transition-opacity duration-300 group-hover:opacity-30" />
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="text-center">
-                  <p className="text-white text-4xl font-secondary">
-                    {edition.year}
-                  </p>
-                  <p className="text-white text-xl">edition</p>
+              <Link href={`/phaser/${edition.year}`}>
+                <Image
+                  src={edition.image}
+                  alt={`Edition ${edition.year}`}
+                  fill
+                  className="object-cover rounded-3xl transition-transform duration-300 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-black/40 transition-opacity duration-300 group-hover:opacity-30" />
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="text-center">
+                    <p className="text-white text-4xl font-secondary">
+                      {edition.year}
+                    </p>
+                    <p className="text-white text-xl">edition</p>
+                  </div>
                 </div>
-              </div>
+              </Link>
             </motion.div>
           ))}
         </motion.div>

@@ -17,12 +17,12 @@ const categories: Category[] = [
     id: 1,
     title: "Phaser Game Jam",
     description:
-      "Hack Farm F.T.S. è un'associazione senza scopo di lucro che opera con passione per promuovere la cultura e le attività culturali come strumenti di aggregazione e inclusione sociale",
-    image: "/hero.jpg", // Replace with your pixel art game image
+      "La Phaser Game Jam – Hackathon è un evento educativo che coinvolge studenti nella creazione di videogiochi con PhaserJS. Offre un'esperienza unica per sviluppare competenze tecniche, lavorare in team e valorizzare il talento creativo nel game development",
+    image: "/hero.jpg",
   },
   {
     id: 2,
-    title: "Le nostre competenze",
+    title: "Hackaton Junior",
     description:
       "Hack Farm F.T.S. è un'associazione senza scopo di lucro che opera con passione per promuovere la Hack Farm F.T.S. è un'associazione senza scopo di lucro che opera con passione per promuovere la Hack Farm F.T.S. è un'associazione senza scopo di lucro che opera con passione per promuovere la",
     image: "/hero.jpg",

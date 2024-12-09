@@ -67,7 +67,7 @@ export default function ContactForm() {
   }
 
   return (
-    <div className=" bg-gradient-to-br flex items-center justify-center p-4">
+    <div className="w-full bg-gradient-to-br flex items-center justify-center md:p-4">
       <Card className="w-full max-w-xl">
         <CardContent className="p-6">
           <h1 className="text-2xl font-bold mb-6">Hai qualcosa da dirci?</h1>

@@ -3,8 +3,8 @@ import ContactForm from "./_components/contact-form";
 
 const Contact = () => {
   return (
-    <main className="mt-[150px] lg:max-w-[1400px] mx-auto flex flex-col lg:flex-row items-center gap-[100px]">
-      <section className="flex-1">
+    <main className="md:mt-[150px] lg:max-w-[1400px] mx-auto flex flex-col lg:flex-row items-center gap-[100px]">
+      <section className="flex-1 w-[90%] mx-auto md:w-[unset] md:mx-0">
         <h1 className="text-4xl md:text-5xl lg:text-8xl text-secondary">
           Contattaci
         </h1>
@@ -26,7 +26,7 @@ const Contact = () => {
           </li>
         </ul>
       </section>
-      <section className="flex-1">
+      <section className="flex-1 w-[90%] mx-auto md:w-[unset] md:mx-0">
         <ContactForm />
       </section>
     </main>

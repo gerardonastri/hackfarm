@@ -21,14 +21,18 @@ const Hero = () => {
             <h1 className="text-7xl text-center text-[#ffffff] font-secondary font-[300]">
               Benvenuti su Hack Farm E.T.S
             </h1>
-            <p className="text-[#D9D9D9] opacity-90 md:max-w-[70%] mt-6 text-center text-sm font-secondary">
+            <p className="text-[#D9D9D9] opacity-90 md:max-w-[70%] mt-6 mb-2 text-center text-sm font-secondary">
               Hack Farm E.T.S. è un'associazione senza scopo di lucro che opera
               con passione per promuovere la cultura e le attività culturali
               come strumenti di aggregazione e inclusione sociale
             </p>
-            <button className="bg-secondary hover:bg-third px-6 py-2 text-[12px] font-secondary font-semibold mt-8 flex items-center gap-x-3 rounded-[1.5rem]">
-              Più info <MoveUpRight className="w-5 h-5  " />
-            </button>
+            <Image
+              src="/logo-stella.png"
+              width={86}
+              height={81}
+              alt="logo hackfarm"
+              className="object-cover"
+            />
           </section>
         </div>
       </div>
