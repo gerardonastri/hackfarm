@@ -27,13 +27,6 @@ const categories: Category[] = [
       "Hack Farm F.T.S. è un'associazione senza scopo di lucro che opera con passione per promuovere la Hack Farm F.T.S. è un'associazione senza scopo di lucro che opera con passione per promuovere la Hack Farm F.T.S. è un'associazione senza scopo di lucro che opera con passione per promuovere la",
     image: "/hero.jpg",
   },
-  {
-    id: 3,
-    title: "Formazione per il futuro",
-    description:
-      "Hack Farm F.T.S. è un'associazione senza scopo di lucro che opera con passione per promuovere la cultura e le attività culturali come strumenti di aggregazione e inclusione sociale",
-    image: "/hero.jpg",
-  },
 ];
 
 export default function CategoriesSection() {
@@ -94,7 +87,7 @@ export default function CategoriesSection() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              className="grid grid-cols-1 md:grid-cols-3 gap-8"
+              className="grid grid-cols-1 md:grid-cols-2 gap-8"
             >
               {categories.map((category) => (
                 <motion.div
@@ -103,14 +96,14 @@ export default function CategoriesSection() {
                   className="relative rounded-3xl overflow-hidden cursor-pointer "
                   onClick={() => setExpandedId(category.id)}
                 >
-                  <div className="relative aspect-square">
+                  <div className="relative aspect-square max-h-[400px] w-full rounded-3xl">
                     <Image
                       src={category.image}
                       alt={category.title}
                       fill
-                      className="object-cover"
+                      className="object-cover rounded-3xl"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-b from-black/40 to-black/80" />
+                    <div className="absolute inset-0 bg-gradient-to-b from-black/40 to-black/80 rounded-3xl" />
                     <div className="absolute top-4 right-4 bg-[#c8ff00] rounded-full p-2 hover:bg-[#a3cc00] transition-colors">
                       <MoveUpRight className="w-4 h-4 text-black" />
                     </div>

@@ -4,10 +4,6 @@ import { Card, CardContent } from "@/components/ui/card";
 import { motion } from "framer-motion";
 import Image from "next/image";
 
-interface EditionHeaderProps {
-  year: string;
-  image: string;
-}
 const prizes = [
   {
     id: 1,
@@ -60,10 +56,7 @@ const item = {
   show: { opacity: 1, y: 0 },
 };
 
-export default function EditionHeader({
-  year = "2k21",
-  image = "/image.jpg",
-}: EditionHeaderProps) {
+export default function page() {
   return (
     <main className="max-w-[1600px] pt-[60px] mx-auto px-4 lg:px-[3rem]">
       <motion.div
@@ -76,8 +69,8 @@ export default function EditionHeader({
           {/* Banner Image */}
           <div className="relative h-[250px] rounded-3xl overflow-hidden">
             <Image
-              src={image}
-              alt={`Edition ${year}`}
+              src="/image.jpg"
+              alt={`Edition 2021`}
               fill
               className="object-cover brightness-75"
             />
@@ -100,7 +93,7 @@ export default function EditionHeader({
                 color: "transparent",
               }}
             >
-              {year}
+              2021
             </motion.h2>
             <motion.p
               initial={{ opacity: 0, y: 10 }}
