@@ -13,26 +13,23 @@ const poppins = Poppins({
 
 export const metadata: Metadata = {
   title: "Hackfarm",
-  description: "Hackfarm",
+  description:
+    "Hack Farm E.T.S. è un'associazione senza scopo di lucro che opera con passione per promuovere la cultura e le attività culturali come strumenti di aggregazione e inclusione sociale",
   openGraph: {
     description:
-      "The Ultimate Nextjs 14 Starter Kit for quickly building your SaaS, giving you time to focus on what really matters",
-    images: [
-      "https://utfs.io/f/8a428f85-ae83-4ca7-9237-6f8b65411293-eun6ii.png",
-    ],
-    url: "https://starter.rasmic.xyz/",
+      "Hack Farm E.T.S. è un'associazione senza scopo di lucro che opera con passione per promuovere la cultura e le attività culturali come strumenti di aggregazione e inclusione sociale",
+    images: ["/logo-stella.png"],
+    url: "hackfarm.it",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Nextjs Starter Kit",
+    title: "Hackfarm",
     description:
-      "The Ultimate Nextjs 14 Starter Kit for quickly building your SaaS, giving you time to focus on what really matters",
+      "Hack Farm E.T.S. è un'associazione senza scopo di lucro che opera con passione per promuovere la cultura e le attività culturali come strumenti di aggregazione e inclusione sociale",
     siteId: "",
     creator: "@rasmic",
     creatorId: "",
-    images: [
-      "https://utfs.io/f/8a428f85-ae83-4ca7-9237-6f8b65411293-eun6ii.png",
-    ],
+    images: ["/logo-stella.png"],
   },
 };
 
