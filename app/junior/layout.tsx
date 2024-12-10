@@ -13,7 +13,7 @@ const layout = ({
       <div
         className="absolute top-0 left-0 w-full h-[110vh] overflow-hidden"
         style={{
-          backgroundImage: `url('/mask-3.png')`,
+          backgroundImage: `url('/mask-2.png')`,
           backgroundPosition: "center",
           backgroundSize: "cover",
           backgroundRepeat: "no-repeat",

@@ -1,6 +1,7 @@
 import Navbar from "@/components/layout/Navbar";
 import React from "react";
 import { Toaster } from "@/components/ui/toaster";
+import Footer from "@/components/layout/Footer";
 
 const layout = ({
   children,
@@ -28,6 +29,7 @@ const layout = ({
         <Navbar />
         {children}
         <Toaster />
+        <Footer />
       </div>
     </div>
   );

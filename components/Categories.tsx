@@ -2,14 +2,21 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { LucideMoveDownLeft, Maximize2, MoveUpRight } from "lucide-react";
+import {
+  ArrowRight,
+  LucideMoveDownLeft,
+  Maximize2,
+  MoveUpRight,
+} from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
 interface Category {
   id: number;
   title: string;
   description: string;
   image: string;
+  link: string;
 }
 
 const categories: Category[] = [
@@ -19,6 +26,7 @@ const categories: Category[] = [
     description:
       "La Phaser Game Jam – Hackathon è un evento educativo che coinvolge studenti nella creazione di videogiochi con PhaserJS. Offre un'esperienza unica per sviluppare competenze tecniche, lavorare in team e valorizzare il talento creativo nel game development",
     image: "/hero.jpg",
+    link: "/phaser",
   },
   {
     id: 2,
@@ -26,6 +34,7 @@ const categories: Category[] = [
     description:
       "Hack Farm F.T.S. è un'associazione senza scopo di lucro che opera con passione per promuovere la Hack Farm F.T.S. è un'associazione senza scopo di lucro che opera con passione per promuovere la Hack Farm F.T.S. è un'associazione senza scopo di lucro che opera con passione per promuovere la",
     image: "/hero.jpg",
+    link: "/junior",
   },
 ];
 
@@ -33,7 +42,7 @@ export default function CategoriesSection() {
   const [expandedId, setExpandedId] = useState<number | null>(null);
 
   return (
-    <div className="min-h-screen mt-[60px] p-6">
+    <div className="mt-[60px] p-6">
       <div className="max-w-6xl mx-auto">
         <AnimatePresence mode="wait">
           {expandedId ? (
@@ -75,6 +84,21 @@ export default function CategoriesSection() {
                           {category.title}
                         </h3>
                         <p className="text-gray">{category.description}</p>
+                        <Link
+                          href={category.link}
+                          className={`
+                            inline-flex items-center justify-center
+                            px-5 py-2
+                            bg-[#B3E600] hover:bg-[#9FC900]
+                            text-black font-semibold
+                            rounded-2xl mt-4
+                            transition-colors duration-300
+                            focus:outline-none focus:ring-2 focus:ring-[#B3E600] focus:ring-offset-2
+                          `}
+                        >
+                          <span>Scopri di più</span>
+                          <ArrowRight className="ml-2 h-5 w-5" />
+                        </Link>
                       </motion.div>
                     </div>
                   )
