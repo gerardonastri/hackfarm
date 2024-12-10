@@ -74,7 +74,7 @@ export default async function page({
       >
         {/* back link  */}
         <Link
-          href="/phaser"
+          href="/junior"
           className={`
         inline-flex items-center justify-center
         text-white hover:text-gray-200
@@ -154,18 +154,18 @@ export default async function page({
           variants={container}
           initial="hidden"
           animate="show"
-          className="pt-12 flex flex-wrap lg:flex-nowrap justify-center items-end gap-4 sm:gap-6 md:gap-8 lg:gap-16 mb-16"
+          className="pt-12 flex flex-col lg:flex-row justify-center items-end gap-4 lg:gap-8 xl:gap-16 mb-16 max-w-7xl mx-auto"
         >
           {prizes.map((prize, index) => (
             <motion.div
               key={prize.id}
               variants={item}
-              className={`w-full sm:w-1/2 md:w-1/3 lg:w-auto lg:flex-grow ${
+              className={`w-full lg:flex-grow ${
                 index === 2
-                  ? "h-[250px] sm:h-[280px] md:h-[306px] lg:h-[306px]"
+                  ? "h-[300px] lg:h-[306px]"
                   : index === 1 || index === 3
-                  ? "h-[220px] sm:h-[250px] md:h-[268px] lg:h-[268px]"
-                  : "h-[200px] sm:h-[220px] md:h-[235px] lg:h-[235px]"
+                  ? "h-[270px] lg:h-[268px]"
+                  : "h-[250px] lg:h-[235px]"
               }`}
             >
               <Card
@@ -177,14 +177,14 @@ export default async function page({
                     : ""
                 }`}
               >
-                <CardContent className="p-4 sm:p-6 h-full flex flex-col items-center justify-between text-center">
+                <CardContent className="p-6 h-full flex flex-col items-center justify-between text-center">
                   <div
-                    className={`mb-2 sm:mb-4 relative ${
+                    className={`mb-4 relative ${
                       index === 2
-                        ? "w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 lg:w-32 lg:h-32"
+                        ? "w-24 h-24 lg:w-32 lg:h-32"
                         : index === 1 || index === 3
-                        ? "w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 lg:w-24 lg:h-24"
-                        : "w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 lg:w-20 lg:h-20"
+                        ? "w-20 h-20 lg:w-24 lg:h-24"
+                        : "w-16 h-16 lg:w-20 lg:h-20"
                     }`}
                   >
                     <Image
@@ -194,12 +194,15 @@ export default async function page({
                       className="object-contain"
                     />
                   </div>
-                  <p className="text-xs sm:text-sm text-[#7C013E] mb-2 sm:mb-4">
+                  <p className="text-sm text-[#7C013E] mb-4 flex-grow">
                     {prize.description}
+                  </p>
+                  <p className="text-2xl font-bold text-[#7C013E] lg:hidden">
+                    {prize.amount}
                   </p>
                 </CardContent>
               </Card>
-              <p className="text-xl sm:text-2xl md:text-3xl text-center font-bold text-white mt-4 sm:mt-6 md:mt-8">
+              <p className="text-3xl text-center font-bold text-white mt-8 hidden lg:block">
                 {prize.amount}
               </p>
             </motion.div>
@@ -230,7 +233,7 @@ export default async function page({
           </div>
         </motion.div>
 
-        <div className="max-w-[1600px] mx-auto px-4 py-12">
+        <div className="max-w-[1600px] mx-auto lg:px-4 py-12">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
