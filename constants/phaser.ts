@@ -19,9 +19,108 @@ interface Edition {
 const senior: Edition[] = [
   {
     id: 1,
+    year: 2022,
+    videoId: "eH6x2dUdYyM",
+    media: [],
+    mainImage: "main-image-2023.jpg",
+    vincitori: [
+      {
+        name: "IIS Mattei - Fortunato",
+        location: "Salerno",
+        teamName: "The while loops",
+        prize: 150,
+        logo: "/assets/squadre/2022/img-4.jpg",
+        rank: 4,
+      },
+      {
+        name: "IIS Enrico Fermi",
+        location: "Salerno",
+        teamName: "Error404",
+        prize: 300,
+        logo: "/assets/squadre/2022/img-2.jpg",
+        rank: 2,
+      },
+      {
+        name: "IIS Basilio Focaccia",
+        location: "Salerno",
+        teamName: "The BITles",
+        prize: 600,
+        logo: "/assets/squadre/2022/img-1.jpg",
+        rank: 1,
+      },
+      {
+        name: "ITI G.B. Lucarelli",
+        location: "Benevento",
+        teamName: "Humans from Earth",
+        prize: 200,
+        logo: "/assets/squadre/2022/img-3.jpg",
+        rank: 3,
+      },
+      {
+        name: "IIS Margherita Hack",
+        location: "Baronissi",
+        teamName: "Phaserat in centro",
+        prize: 100,
+        logo: "/logo.png",
+        rank: 5,
+      },
+    ],
+  },
+  {
+    id: 2,
+    year: 2023,
+    videoId: "-zjwOesIuak", // Esempio di ID di un video YouTube
+    media: [],
+    mainImage: "main-image-2023.jpg",
+    vincitori: [
+      {
+        name: 'I.T.I. "G. Ferraris"',
+        location: "Napoli",
+        teamName: "Alpha Game Studio",
+        prize: 200,
+        logo: "/assets/squadre/2023/img-4.jpg",
+        rank: 4,
+      },
+      {
+        name: "IIS Enrico Fermi",
+        location: "Sarno",
+        teamName: "Hyperuranium",
+        prize: 600,
+        logo: "/assets/squadre/2023/img-2.jpg",
+        rank: 2,
+      },
+      {
+        name: 'Liceo Scientifico "E.FERMI"',
+        location: "Aversa",
+        teamName: "Racoon",
+        prize: 1000,
+        logo: "/assets/squadre/2023/img-1.jpg",
+        rank: 1,
+      },
+
+      {
+        name: "ITI G.B. Lucarelli",
+        location: "Benevento",
+        teamName: "Time Square",
+        prize: 400,
+        logo: "/assets/squadre/2023/img-3.jpg",
+        rank: 3,
+      },
+      {
+        name: 'I.I.S. "Guglielmo Marconi"',
+        location: "Nocera",
+        teamName: "</noname>",
+        prize: 100,
+        logo: "/assets/squadre/2023/img-5.jpg",
+        rank: 5,
+      },
+    ],
+  },
+  {
+    id: 3,
     year: 2024,
-    videoId: "dQw4w9WgXcQ", // Esempio di ID di un video YouTube
-    media: ["img-gallery-1.jpg", "img-gallery-2.jpg", "img-gallery-3.jpg"],
+    videoId: "cnUIg-eFldg", // Esempio di ID di un video YouTube
+    media: [],
     mainImage: "main-image-2023.jpg",
     vincitori: [
       {

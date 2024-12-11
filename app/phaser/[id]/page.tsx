@@ -70,7 +70,7 @@ const carouselImages = [
   "/hero.jpg",
   "/hero.jpg",
   "/hero.jpg",
-]
+];
 
 export default async function page({
   params,
@@ -257,7 +257,7 @@ export default async function page({
             transition={{ duration: 0.6 }}
             className="relative aspect-video rounded-3xl overflow-hidden"
           >
-            <VideoPlayer />
+            <VideoPlayer videoId={senior[id - 1].videoId} />
           </motion.div>
         </div>
 
