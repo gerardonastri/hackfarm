@@ -78,7 +78,7 @@ export default function Phaser() {
                 edition.id === 1 || edition.id === 4 ? "h-[350px]" : "h-[280px]"
               } w-full relative aspect-square rounded-3xl overflow-hidden group cursor-pointer`}
             >
-              <Link href={`/phaser/${edition.year}`}>
+              <Link href={`/phaser/${edition.id}`}>
                 <Image
                   src={edition.image}
                   alt={`Edition ${edition.year}`}

@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { ArrowLeft } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { senior } from "@/constants/phaser";
 
 const prizes = [
   {
@@ -61,9 +62,9 @@ const item = {
 export default async function page({
   params,
 }: {
-  params: Promise<{ id?: string }>;
+  params: Promise<{ id: number }>;
 }) {
-  const year = (await params).id;
+  const id = (await params).id;
   return (
     <main className="max-w-[1600px] pt-[60px] mx-auto px-4 lg:px-[3rem]">
       <motion.div
@@ -113,7 +114,7 @@ export default async function page({
                 color: "transparent",
               }}
             >
-              {year}
+              {senior[id - 1].year}
             </motion.h2>
             <motion.p
               initial={{ opacity: 0, y: 10 }}
@@ -156,9 +157,9 @@ export default async function page({
           animate="show"
           className="pt-12 flex flex-col lg:flex-row justify-center items-end gap-4 lg:gap-8 xl:gap-16 mb-16 max-w-7xl mx-auto"
         >
-          {prizes.map((prize, index) => (
+          {senior[id - 1].vincitori.map((winner, index) => (
             <motion.div
-              key={prize.id}
+              key={index}
               variants={item}
               className={`w-full lg:flex-grow ${
                 index === 2
@@ -188,22 +189,25 @@ export default async function page({
                     }`}
                   >
                     <Image
-                      src={prize.icon}
+                      src={winner.logo}
                       alt="Prize icon"
                       fill
                       className="object-contain"
                     />
                   </div>
                   <p className="text-sm text-[#7C013E] mb-4 flex-grow">
-                    {prize.description}
+                    <b>{winner.teamName}</b>
+                    <br />
+                    {winner.name}
+                    {winner.location}
                   </p>
                   <p className="text-2xl font-bold text-[#7C013E] lg:hidden">
-                    {prize.amount}
+                    {winner.prize}
                   </p>
                 </CardContent>
               </Card>
               <p className="text-3xl text-center font-bold text-white mt-8 hidden lg:block">
-                {prize.amount}
+                {winner.prize}
               </p>
             </motion.div>
           ))}
