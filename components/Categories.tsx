@@ -25,7 +25,7 @@ const categories: Category[] = [
     title: "Phaser Game Jam",
     description:
       "La Phaser Game Jam – Hackathon è un evento educativo che coinvolge studenti nella creazione di videogiochi con PhaserJS. Offre un'esperienza unica per sviluppare competenze tecniche, lavorare in team e valorizzare il talento creativo nel game development",
-    image: "/hero.jpg",
+    image: "/phaser/img-1.webp",
     link: "/phaser",
   },
   {
@@ -33,7 +33,7 @@ const categories: Category[] = [
     title: "Hackaton Junior",
     description:
       "Hack Farm F.T.S. è un'associazione senza scopo di lucro che opera con passione per promuovere la Hack Farm F.T.S. è un'associazione senza scopo di lucro che opera con passione per promuovere la Hack Farm F.T.S. è un'associazione senza scopo di lucro che opera con passione per promuovere la",
-    image: "/hero.jpg",
+    image: "/phaser/junior.webp",
     link: "/junior",
   },
 ];
@@ -66,7 +66,7 @@ export default function CategoriesSection() {
                             fill
                             className="object-cover"
                           />
-                          <div className="absolute inset-0 bg-gradient-to-b from-black/40 to-black/80" />
+                          <div className="absolute inset-0 bg-gradient-to-b from-black/20 to-black/60" />
                           <button
                             onClick={() => setExpandedId(null)}
                             className="absolute top-4 right-4 bg-[#c8ff00] rounded-full p-2 hover:bg-[#a3cc00] transition-colors"
@@ -127,7 +127,7 @@ export default function CategoriesSection() {
                       fill
                       className="object-cover rounded-3xl"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-b from-black/40 to-black/80 rounded-3xl" />
+                    <div className="absolute inset-0 bg-gradient-to-b from-black/20 to-black/60 rounded-3xl" />
                     <div className="absolute top-4 right-4 bg-[#c8ff00] rounded-full p-2 hover:bg-[#a3cc00] transition-colors">
                       <MoveUpRight className="w-4 h-4 text-black" />
                     </div>

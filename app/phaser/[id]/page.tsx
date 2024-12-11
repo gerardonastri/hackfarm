@@ -1,6 +1,8 @@
 "use client";
 
+import InfiniteCarousel from "@/components/Carousel";
 import { Card, CardContent } from "@/components/ui/card";
+import VideoPlayer from "@/components/VideoPlayer";
 import { motion } from "framer-motion";
 import { ArrowLeft } from "lucide-react";
 import Image from "next/image";
@@ -57,6 +59,17 @@ const item = {
   hidden: { opacity: 0, y: 20 },
   show: { opacity: 1, y: 0 },
 };
+
+const carouselImages = [
+  "/hero.jpg",
+  "/hero.jpg",
+  "/hero.jpg",
+  "/hero.jpg",
+  "/hero.jpg",
+  "/hero.jpg",
+  "/hero.jpg",
+  "/hero.jpg",
+]
 
 export default async function page({
   params,
@@ -233,23 +246,18 @@ export default async function page({
           </div>
         </motion.div>
 
-        <div className="max-w-[1600px] mx-auto lg:px-4 py-12">
+        <div className="max-w-[1600px] mx-auto lg:px-4 lg:py-12">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             className="relative aspect-video rounded-3xl overflow-hidden"
           >
-            <Image
-              src="/hero.jpg"
-              alt="Video thumbnail"
-              fill
-              className="object-cover"
-              sizes="(max-width: 1280px) 100vw, 1280px"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/60 to-transparent" />
+            <VideoPlayer />
           </motion.div>
         </div>
+
+        <InfiniteCarousel images={carouselImages} />
       </motion.div>
     </main>
   );
