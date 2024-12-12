@@ -1,12 +1,12 @@
-"use client"
+"use client";
 
-import { motion, useMotionValue, useTransform } from "framer-motion"
-import Image from "next/image"
-import { useInView } from "react-intersection-observer"
-import { Card } from "@/components/ui/card"
-import { BookOpen, Users, Globe, Briefcase, Lightbulb } from 'lucide-react'
-import { animate } from 'framer-motion'
-import React from 'react'
+import { motion, useMotionValue, useTransform } from "framer-motion";
+import Image from "next/image";
+import { useInView } from "react-intersection-observer";
+import { Card } from "@/components/ui/card";
+import { BookOpen, Users, Globe, Briefcase, Lightbulb } from "lucide-react";
+import { animate } from "framer-motion";
+import React from "react";
 
 const stats = [
   {
@@ -25,54 +25,55 @@ const stats = [
     value: "48h",
     label: "Di gaming non-stop",
   },
-]
+];
 
 const objectives = [
   {
     icon: BookOpen,
     title: "Progetti Formativi",
-    description: "Collaboriamo con università, aziende e centri di ricerca per offrire progetti formativi innovativi per studenti e docenti.",
+    description:
+      "Collaboriamo con università, aziende e centri di ricerca per offrire progetti formativi innovativi per studenti e docenti.",
   },
   {
     icon: Users,
     title: "Ricerca Educativa",
-    description: "Promuoviamo la ricerca educativa attraverso la produzione di studi e pubblicazioni innovative nel campo del gaming e della tecnologia.",
+    description:
+      "Promuoviamo la ricerca educativa attraverso la produzione di studi e pubblicazioni innovative nel campo del gaming e della tecnologia.",
   },
   {
     icon: Globe,
     title: "Eventi Culturali",
-    description: "Organizziamo eventi culturali e sociali per favorire lo sviluppo e l'inclusione del territorio attraverso il gaming.",
+    description:
+      "Organizziamo eventi culturali e sociali per favorire lo sviluppo e l'inclusione del territorio attraverso il gaming.",
   },
   {
     icon: Briefcase,
     title: "Imprenditorialità",
-    description: "Sosteniamo l'imprenditorialità responsabile offrendo orientamento e opportunità di occupazione nel settore del gaming.",
+    description:
+      "Sosteniamo l'imprenditorialità responsabile offrendo orientamento e opportunità di occupazione nel settore del gaming.",
   },
   {
     icon: Lightbulb,
     title: "Innovazione Digitale",
-    description: "Promuoviamo la cultura dell'innovazione e dell'ICT con particolare attenzione alla digitalizzazione e alla sostenibilità.",
+    description:
+      "Promuoviamo la cultura dell'innovazione e dell'ICT con particolare attenzione alla digitalizzazione e alla sostenibilità.",
   },
-]
+];
 
-const images = [
-  "/about/img-1.webp",
-  "/about/img-2.webp",
-  "/about/img-3.webp",
-]
+const images = ["/about/img-1.webp", "/about/img-2.webp", "/about/img-3.webp"];
 
 function AnimatedStat({ value, label }: { value: string; label: string }) {
   const count = useMotionValue(0);
-  const rounded = useTransform(count, latest => Math.round(latest));
-  const displayValue = useTransform(rounded, latest => {
-    if (value.endsWith('+')) {
+  const rounded = useTransform(count, (latest) => Math.round(latest));
+  const displayValue = useTransform(rounded, (latest) => {
+    if (value.endsWith("+")) {
       return `${latest}+`;
     }
     return latest.toString();
   });
 
   React.useEffect(() => {
-    const finalValue = parseInt(value.replace('+', ''));
+    const finalValue = parseInt(value.replace("+", ""));
     const controls = animate(count, finalValue, { duration: 2 });
     return controls.stop;
   }, [count, value]);
@@ -91,12 +92,12 @@ export default function AboutPage() {
   const [ref, inView] = useInView({
     triggerOnce: true,
     threshold: 0.1,
-  })
+  });
 
   const [objectivesRef, objectivesInView] = useInView({
     triggerOnce: true,
     threshold: 0.1,
-  })
+  });
 
   return (
     <div className=" text-white">
@@ -111,11 +112,16 @@ export default function AboutPage() {
             Chi siamo?
           </h1>
           <p className="text-lg sm:text-xl max-w-3xl mx-auto text-gray-300">
-            Il nostro obiettivo è generare un impatto positivo sulla comunità attraverso eventi di gaming innovativi e coinvolgenti, creando spazi di collaborazione e crescita per tutti i partecipanti.
+            Il nostro obiettivo è generare un impatto positivo sulla comunità
+            attraverso eventi di gaming innovativi e coinvolgenti, creando spazi
+            di collaborazione e crescita per tutti i partecipanti.
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16" ref={ref}>
+        <div
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16"
+          ref={ref}
+        >
           {stats.map((stat, index) => (
             <motion.div
               key={index}
@@ -127,6 +133,31 @@ export default function AboutPage() {
             </motion.div>
           ))}
         </div>
+
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16"
+        >
+          {images.map((image, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              className="relative aspect-video rounded-2xl overflow-hidden group"
+            >
+              <Image
+                src={image}
+                alt={`Game Jam Event ${index + 1}`}
+                fill
+                className="object-cover transition-transform duration-300 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            </motion.div>
+          ))}
+        </motion.div>
 
         <motion.div
           ref={objectivesRef}
@@ -165,31 +196,6 @@ export default function AboutPage() {
         </motion.div>
 
         <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16"
-        >
-          {images.map((image, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="relative aspect-video rounded-2xl overflow-hidden group"
-            >
-              <Image
-                src={image}
-                alt={`Game Jam Event ${index + 1}`}
-                fill
-                className="object-cover transition-transform duration-300 group-hover:scale-105"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-            </motion.div>
-          ))}
-        </motion.div>
-
-        <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.4 }}
@@ -199,7 +205,8 @@ export default function AboutPage() {
             Unisciti alla nostra community
           </h2>
           <p className="text-lg text-gray-300 mb-8 max-w-2xl mx-auto">
-            Partecipa ai nostri eventi, condividi la tua passione per il gaming e fai parte di una community in continua crescita.
+            Partecipa ai nostri eventi, condividi la tua passione per il gaming
+            e fai parte di una community in continua crescita.
           </p>
           <button className="bg-[#92fa1c] text-black px-8 py-3 rounded-full font-semibold hover:bg-[#c8ff00] transition-colors duration-300">
             Partecipa ora
@@ -207,6 +214,5 @@ export default function AboutPage() {
         </motion.div>
       </div>
     </div>
-  )
+  );
 }
-
