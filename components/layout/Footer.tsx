@@ -48,18 +48,18 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href="/projects"
+                  href="/phaser"
                   className="hover:text-white transition-colors"
                 >
-                  Projects
+                  Phaser
                 </Link>
               </li>
               <li>
                 <Link
-                  href="/products"
+                  href="/junior"
                   className="hover:text-white transition-colors"
                 >
-                  Products
+                  Hackathon
                 </Link>
               </li>
               <li>
@@ -72,10 +72,10 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href="/about"
+                  href="/cookie"
                   className="hover:text-white transition-colors"
                 >
-                  Contact
+                  Cookie Policy
                 </Link>
               </li>
             </ul>
@@ -89,15 +89,15 @@ export default function Footer() {
             <ul className="space-y-4">
               <li className="flex items-center gap-2">
                 <MapPin className="h-5 w-5" />
-                <span>123 Design Street, Milan, Italy</span>
+                <span>Baronissi, Valle dell’Irno</span>
               </li>
               <li className="flex items-center gap-2">
                 <Mail className="h-5 w-5" />
-                <span>contact@company.com</span>
+                <span>info@hackfarm.it</span>
               </li>
               <li className="flex items-center gap-2">
                 <Phone className="h-5 w-5" />
-                <span>+39 123 456 7890</span>
+                <span>+39 366 680 5854</span>
               </li>
               <li className="flex items-start gap-2">
                 <Clock className="h-5 w-5 mt-1" />
@@ -117,7 +117,7 @@ export default function Footer() {
             <ul className="space-y-4">
               <li>
                 <Link
-                  href="/instagram"
+                  href="https://www.instagram.com/hackfarm_ets/"
                   className="hover:text-white transition-colors"
                 >
                   Instagram
@@ -125,7 +125,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href="/facebook"
+                  href="https://www.facebook.com/hackfarmets"
                   className="hover:text-white transition-colors"
                 >
                   Facebook
@@ -133,10 +133,10 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href="/linkedin"
+                  href="https://www.youtube.com/@IISHack"
                   className="hover:text-white transition-colors"
                 >
-                  LinkedIn
+                  Youtube
                 </Link>
               </li>
             </ul>
