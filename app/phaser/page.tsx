@@ -91,7 +91,7 @@ export default function Phaser() {
               variants={item}
               className="bg-white/5 backdrop-blur-sm rounded-xl p-6 hover:bg-white/10 transition-all duration-300"
             >
-              <feature.icon className="w-12 h-12 text-secondary mb-4" />
+              <feature.icon className="w-12 h-12 text-orange-500  mb-4" />
               <h3 className="text-xl font-bold text-white mb-2">
                 {feature.title}
               </h3>
@@ -145,8 +145,8 @@ export default function Phaser() {
           transition={{ duration: 0.6 }}
           className="relative mb-32"
         >
-          <div className="absolute -top-16 left-0 w-20 h-1 bg-secondary" />
-          <h2 className="text-4xl lg:text-5xl font-bold  bg-clip-text text-secondary mb-12">
+          <div className="absolute -top-16 left-0 w-20 h-1 bg-gradient-to-r from-secondary to-red-600" />
+          <h2 className="text-4xl lg:text-5xl font-bold  bg-clip-text text-transparent  bg-gradient-to-r from-secondary to-red-600  mb-12">
             Più informazioni
           </h2>
 
@@ -192,19 +192,16 @@ export default function Phaser() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="bg-secondary rounded-3xl p-12 text-center"
+          className="bg-gradient-to-r from-orange-600 to-red-600 rounded-3xl p-12 text-center"
         >
-          <h2 className="text-4xl font-bold text-black mb-6">
-            Pronto per la sfida?
-          </h2>
-          <p className="text-black/90 text-lg mb-8 max-w-2xl mx-auto">
-            Unisciti alla prossima Phaser Game Jam e trasforma le tue idee in
-            realtà. Sviluppa le tue competenze, collabora con altri appassionati
-            e crea il tuo videogioco!
+          <h2 className="text-4xl font-bold text-white mb-6">Pronto per la sfida?</h2>
+          <p className="text-white/90 text-lg mb-8 max-w-2xl mx-auto">
+            Unisciti alla prossima Phaser Game Jam e trasforma le tue idee in realtà. 
+            Sviluppa le tue competenze, collabora con altri appassionati e crea il tuo videogioco!
           </p>
-          <Link
-            href="/register"
-            className="inline-flex items-center px-8 py-3 rounded-full bg-black text-white font-bold text-lg transition-colors duration-300"
+          <Link 
+            href="/register" 
+            className="inline-flex items-center px-8 py-3 rounded-full bg-white text-orange-600 font-bold text-lg hover:bg-orange-100 transition-colors duration-300"
           >
             Registrati ora
             <ArrowRight className="ml-2 w-5 h-5" />
