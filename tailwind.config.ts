@@ -8,27 +8,46 @@ export default {
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-    extend: {
-      colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
-        secondary: "#D9FF00",
-        third: "#88A001",
-        gray: "#D9D9D9",
-        "dark-gray": "#1c1c1c",
-      },
-      fontFamily: {
-        secondary: "Poppins, sans-serif",
-      },
-      // backgroundImage: {
-      // 	'custom-gradient': 'url('/mask.png'), black'
-      // },
-      borderRadius: {
-        lg: "var(--radius)",
-        md: "calc(var(--radius) - 2px)",
-        sm: "calc(var(--radius) - 4px)",
-      },
-    },
+  	extend: {
+  		colors: {
+  			background: 'var(--background)',
+  			foreground: 'var(--foreground)',
+  			secondary: '#D9FF00',
+  			third: '#88A001',
+  			gray: '#D9D9D9',
+  			'dark-gray': '#1c1c1c'
+  		},
+  		fontFamily: {
+  			secondary: 'Poppins, sans-serif'
+  		},
+  		borderRadius: {
+  			lg: 'var(--radius)',
+  			md: 'calc(var(--radius) - 2px)',
+  			sm: 'calc(var(--radius) - 4px)'
+  		},
+  		keyframes: {
+  			'accordion-down': {
+  				from: {
+  					height: '0'
+  				},
+  				to: {
+  					height: 'var(--radix-accordion-content-height)'
+  				}
+  			},
+  			'accordion-up': {
+  				from: {
+  					height: 'var(--radix-accordion-content-height)'
+  				},
+  				to: {
+  					height: '0'
+  				}
+  			}
+  		},
+  		animation: {
+  			'accordion-down': 'accordion-down 0.2s ease-out',
+  			'accordion-up': 'accordion-up 0.2s ease-out'
+  		}
+  	}
   },
   plugins: [require("tailwindcss-animate")],
 } satisfies Config;

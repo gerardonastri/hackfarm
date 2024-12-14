@@ -170,7 +170,7 @@ export default async function page({
                     )}
                   </div>
                   <div className="space-y-2 flex-grow">
-                    <h4 className="text-lg font-bold text-secondary group-hover:text-white transition-colors duration-300">
+                    <h4 className="text-lg font-bold  text-[#7C013E] group-hover:text-white transition-colors duration-300">
                       {winner.teamName}
                     </h4>
                     <p className="text-sm text-white/60 group-hover:text-white/80 transition-colors duration-300">
@@ -180,7 +180,7 @@ export default async function page({
                       {winner.location}
                     </p>
                   </div>
-                  <p className="text-2xl font-bold text-secondary group-hover:text-white transition-colors duration-300 mt-4">
+                  <p className="text-2xl font-bold  text-[#7C013E] group-hover:text-white transition-colors duration-300 mt-4">
                     € {winner.prize}
                   </p>
                 </CardContent>
