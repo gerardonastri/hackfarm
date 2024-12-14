@@ -72,7 +72,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href="/cookie"
+                  href="/privacy-policy"
                   className="hover:text-white transition-colors"
                 >
                   Cookie Policy

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import { Poppins } from "next/font/google";
 import "./globals.css";
+import CookieBanner from "@/components/CookieBanner";
 const myFont = localFont({ src: "./font.otf" });
 
 const poppins = Poppins({
@@ -44,6 +45,7 @@ export default function RootLayout({
         className={`${myFont.className} ${poppins.variable} font-poppins  antialiased`}
       >
         {children}
+        <CookieBanner />
       </body>
     </html>
   );
