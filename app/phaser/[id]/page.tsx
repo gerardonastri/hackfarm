@@ -214,7 +214,7 @@ export default async function page({
                 >
                   <div className="h-[2px] w-12 bg-gradient-to-r from-[#7C013E] to-transparent" />
                   <span className="text-white/60 text-sm uppercase tracking-wider">
-                    Edizione 2022
+                    Edizione {senior[id - 1].year}
                   </span>
                 </motion.div>
               </div>
