@@ -44,13 +44,13 @@ const objectives = [
     icon: Globe,
     title: "Eventi Culturali",
     description:
-      "Organizziamo eventi culturali e sociali per favorire lo sviluppo e l'inclusione del territorio attraverso il gaming.",
+      "Organizziamo eventi culturali e sociali per favorire lo sviluppo e l'inclusione del territorio.",
   },
   {
     icon: Briefcase,
     title: "Imprenditorialità",
     description:
-      "Sosteniamo l'imprenditorialità responsabile offrendo orientamento e opportunità di occupazione nel settore del gaming.",
+      "Sosteniamo l'imprenditorialità responsabile offrendo orientamento e opportunità di occupazione.",
   },
   {
     icon: Lightbulb,
@@ -112,13 +112,11 @@ export default function AboutPage() {
             Chi siamo?
           </h1>
           <p className="text-lg sm:text-xl max-w-3xl mx-auto text-gray-300">
-            Il nostro obiettivo è generare un impatto positivo sulla comunità
-            attraverso eventi di gaming innovativi e coinvolgenti, creando spazi
-            di collaborazione e crescita per tutti i partecipanti.
+          L’Associazione Hackfarm E.T.S., un’associazione senza scopo di lucro che si propone come punto di riferimento per la promozione della cultura e delle attività culturali, favorendo l’aggregazione e l’inclusione sociale. 
           </p>
         </motion.div>
 
-        <div
+        {/* <div
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16"
           ref={ref}
         >
@@ -132,7 +130,7 @@ export default function AboutPage() {
               <AnimatedStat value={stat.value} label={stat.label} />
             </motion.div>
           ))}
-        </div>
+        </div> */}
 
         <motion.div
           initial={{ opacity: 0 }}
