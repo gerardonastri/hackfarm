@@ -15,7 +15,7 @@ const page = () => {
   return (
     <div>
       <Hero />
-      <div ref={textRef} className="max-w-6xl mt-[100px] mx-auto">
+      <div ref={textRef} className="max-w-6xl px-6 lg:px-0 mt-[100px] mx-auto">
         <motion.h3
           initial={{ opacity: 0, y: 20 }}
           animate={isTextInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}

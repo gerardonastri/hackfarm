@@ -13,7 +13,7 @@ const Hero = () => {
           alt=""
         />
         {/* Overlay */}
-        <div className="absolute top-0 left-0 h-full w-full z-1 inset-0 bg-black/60" />
+        <div className="absolute top-0 left-0 h-full w-full z-1 inset-0 bg-black/65" />
 
         {/* TEXT  */}
         <div className="absolute top-[30%] left-[50%] translate-x-[-50%] z-10 flex gap-x-[80px]">

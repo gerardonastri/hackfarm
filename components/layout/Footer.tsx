@@ -21,7 +21,7 @@ export default function Footer() {
               effective way to nurture creativity
             </p>
           </div>
-          <div className="relative h-[120px] lg:h-[180px] rounded-2xl overflow-hidden">
+          <div className="relative h-[200px] lg:h-[180px] rounded-2xl overflow-hidden">
             <Image
               src="/hero.jpg"
               alt="Modern interior design"
@@ -64,10 +64,10 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href="/privacy-policy"
+                  href="/contact"
                   className="hover:text-white transition-colors"
                 >
-                  Privacy Policy
+                  Contact
                 </Link>
               </li>
               <li>
@@ -75,7 +75,7 @@ export default function Footer() {
                   href="/privacy-policy"
                   className="hover:text-white transition-colors"
                 >
-                  Cookie Policy
+                  Privacy Policy
                 </Link>
               </li>
             </ul>
@@ -89,7 +89,7 @@ export default function Footer() {
             <ul className="space-y-4">
               <li className="flex items-center gap-2">
                 <MapPin className="h-5 w-5" />
-                <span>Baronissi, Valle dell’Irno</span>
+                <span>Corso Garibaldi, 193 - Baronissi (SA)</span>
               </li>
               <li className="flex items-center gap-2">
                 <Mail className="h-5 w-5" />
@@ -99,13 +99,13 @@ export default function Footer() {
                 <Phone className="h-5 w-5" />
                 <span>+39 366 680 5854</span>
               </li>
-              <li className="flex items-start gap-2">
+              {/* <li className="flex items-start gap-2">
                 <Clock className="h-5 w-5 mt-1" />
                 <div>
                   <p>Mon - Fri: 9:00 - 18:00</p>
                   <p>Sat: 10:00 - 16:00</p>
                 </div>
-              </li>
+              </li> */}
             </ul>
           </div>
 

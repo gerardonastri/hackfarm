@@ -1,10 +1,7 @@
 "use client";
 
 import { motion, useMotionValue, useTransform, animate } from "framer-motion";
-import { useEffect, useRef } from "react";
-import { Card } from "./ui/card";
-
-import Image from "next/image";
+import { useEffect } from "react";
 import { useInView } from "react-intersection-observer";
 
 const stats = [
@@ -51,12 +48,22 @@ function AnimatedStat({ value, label }: { value: string; label: string }) {
   }, [count, value]);
 
   return (
-    <Card className="p-6 bg-black/50 backdrop-blur text-center border-[#92fa1c]/20 hover:border-[#92fa1c]/40 transition-colors">
-      <motion.p className="text-4xl font-bold text-[#c8ff00] mb-2">
-        {displayValue}
-      </motion.p>
-      <p className="text-gray">{label}</p>
-    </Card>
+    <div className="relative group">
+      <div className="absolute inset-0 bg-gradient-to-r from-[#6F6FFF] to-[#c8ff00] rounded-xl opacity-0 group-hover:opacity-10 transition-opacity duration-300" />
+      <div className="relative bg-white/5 backdrop-blur-sm border border-white/10 group-hover:border-white/20 rounded-xl p-6 transition-all duration-300">
+        <motion.div
+          className="text-4xl lg:text-5xl font-bold text-[#c8ff00] mb-2 tabular-nums"
+          initial={{ scale: 0.5, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          transition={{ duration: 0.5 }}
+        >
+          {displayValue}
+        </motion.div>
+        <p className="text-white/60 font-medium tracking-wide text-sm uppercase">
+          {label}
+        </p>
+      </div>
+    </div>
   );
 }
 
@@ -67,20 +74,25 @@ export default function StatsSection() {
   });
 
   return (
-    <div
-      className="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-6 gap-6 mb-16 max-w-6xl mx-auto"
-      ref={ref}
-    >
-      {stats.map((stat, index) => (
+    <div className="relative py-20">
+      <div className="absolute inset-0 bg-gradient-to-b from-black/0 via-[#6F6FFF]/5 to-black/0" />
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
-          key={index}
-          initial={{ opacity: 0, y: 20 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6, delay: index * 0.1 }}
+          ref={ref}
+          className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 lg:gap-6"
         >
-          <AnimatedStat value={stat.value} label={stat.label} />
+          {stats.map((stat, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 20 }}
+              animate={inView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.6, delay: index * 0.1 }}
+            >
+              <AnimatedStat value={stat.value} label={stat.label} />
+            </motion.div>
+          ))}
         </motion.div>
-      ))}
+      </div>
     </div>
   );
 }

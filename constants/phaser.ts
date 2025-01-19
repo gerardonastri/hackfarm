@@ -173,6 +173,14 @@ const senior: Edition[] = [
       },
     ],
   },
+  {
+    id: 4,
+    year: 2025,
+    videoId: "", // Esempio di ID di un video YouTube
+    media: [],
+    mainImage: "main-image-2023.jpg",
+    vincitori: [],
+  },
 ];
 
 export type { School, Edition };

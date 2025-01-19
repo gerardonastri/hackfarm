@@ -1,6 +1,6 @@
 import React from "react";
 import ContactForm from "./_components/contact-form";
-import { Facebook, Twitter, Youtube, Instagram, Globe } from 'lucide-react'
+import { Facebook, Twitter, Youtube, Instagram, Globe } from "lucide-react";
 
 const Contact = () => {
   return (
@@ -21,50 +21,52 @@ const Contact = () => {
               info@hackfarm.it
             </a>
           </li>
-          <li className="">📍 Sede: Corso Garibaldi, 193 - Baronissi (SA) C.F. 95200300655</li>
+          <li className="">
+            📍 Sede: Corso Garibaldi, 193 - Baronissi (SA) C.F. 95200300655
+          </li>
           <li>
-          <div className="flex items-center gap-3">
-          <Globe className="w-5 h-5" />
-          <span>Seguici sui nostri canali social</span>
-        </div>
-        <div className="flex items-center mt-4 gap-4">
-          <a 
-            href="https://facebook.com/hackfarm" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="hover:text-[#92fa1c] transition-colors"
-            aria-label="Seguici su Facebook"
-          >
-            <Facebook className="w-6 h-6" />
-          </a>
-          <a 
-            href="https://twitter.com/hackfarm" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="hover:text-[#92fa1c] transition-colors"
-            aria-label="Seguici su X (Twitter)"
-          >
-            <Twitter className="w-6 h-6" />
-          </a>
-          <a 
-            href="https://youtube.com/hackfarm" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="hover:text-[#92fa1c] transition-colors"
-            aria-label="Seguici su YouTube"
-          >
-            <Youtube className="w-6 h-6" />
-          </a>
-          <a 
-            href="https://instagram.com/hackfarm" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="hover:text-[#92fa1c] transition-colors"
-            aria-label="Seguici su Instagram"
-          >
-            <Instagram className="w-6 h-6" />
-          </a>
-        </div>
+            <div className="flex items-center gap-3">
+              <Globe className="w-5 h-5" />
+              <span>Seguici sui nostri canali social</span>
+            </div>
+            <div className="flex items-center mt-4 gap-4">
+              <a
+                href="https://facebook.com/hackfarmets"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-[#92fa1c] transition-colors"
+                aria-label="Seguici su Facebook"
+              >
+                <Facebook className="w-6 h-6" />
+              </a>
+              {/* <a
+                href="https://twitter.com/hackfarm"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-[#92fa1c] transition-colors"
+                aria-label="Seguici su X (Twitter)"
+              >
+                <Twitter className="w-6 h-6" />
+              </a> */}
+              <a
+                href="https://youtube.com/@IISHack"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-[#92fa1c] transition-colors"
+                aria-label="Seguici su YouTube"
+              >
+                <Youtube className="w-6 h-6" />
+              </a>
+              <a
+                href="https://www.instagram.com/hackfarm_ets/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-[#92fa1c] transition-colors"
+                aria-label="Seguici su Instagram"
+              >
+                <Instagram className="w-6 h-6" />
+              </a>
+            </div>
           </li>
         </ul>
       </section>
