@@ -21,7 +21,14 @@ const senior: Edition[] = [
     id: 1,
     year: 2022,
     videoId: "eH6x2dUdYyM",
-    media: [],
+    media: [
+      "/phaser/2023/img-1.webp",
+      "/phaser/2023/img-2.webp",
+      "/phaser/2023/img-3.webp",
+      "/phaser/2023/img-4.webp",
+      "/phaser/2023/img-5.webp",
+      "/phaser/2023/img-6.webp",
+    ],
     mainImage: "main-image-2023.jpg",
     vincitori: [
       {
@@ -70,7 +77,14 @@ const senior: Edition[] = [
     id: 2,
     year: 2023,
     videoId: "-zjwOesIuak", // Esempio di ID di un video YouTube
-    media: [],
+    media: [
+      "/phaser/2023/img-1.webp",
+      "/phaser/2023/img-2.webp",
+      "/phaser/2023/img-3.webp",
+      "/phaser/2023/img-4.webp",
+      "/phaser/2023/img-5.webp",
+      "/phaser/2023/img-6.webp",
+    ],
     mainImage: "main-image-2023.jpg",
     vincitori: [
       {
@@ -120,7 +134,14 @@ const senior: Edition[] = [
     id: 3,
     year: 2024,
     videoId: "cnUIg-eFldg", // Esempio di ID di un video YouTube
-    media: [],
+    media: [
+      "/phaser/2024/img-1.webp",
+      "/phaser/2024/img-2.webp",
+      "/phaser/2024/img-3.webp",
+      "/phaser/2024/img-4.webp",
+      "/phaser/2024/img-5.webp",
+      "/phaser/2024/img-6.webp",
+    ],
     mainImage: "main-image-2023.jpg",
     vincitori: [
       {

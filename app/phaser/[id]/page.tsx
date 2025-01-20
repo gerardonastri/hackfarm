@@ -19,7 +19,7 @@ import { senior } from "@/constants/phaser";
 const editionData = [
   {
     year: 2022,
-    image: "/2022-edition-image.jpg",
+    image: "/hero-2022.jpg",
     introText:
       "La Phaser Game Jam celebra il talento, la creatività e l'innovazione. Ogni edizione premia i migliori team che, con impegno e passione, hanno trasformato idee in progetti straordinari. Scopri i vincitori e i loro lavori, esempi concreti di eccellenza nel campo della programmazione, del design e della gamification. Un tributo al loro spirito innovativo e alla loro dedizione!",
     stats: [
@@ -31,7 +31,7 @@ const editionData = [
   },
   {
     year: 2023,
-    image: "/2023-edition-image.jpg",
+    image: "/phaser/2023/img-5.webp",
     introText:
       "La seconda edizione della Phaser Game Jam è stata ancora più avvincente della prima, alzando l'asticella dell'innovazione e della creatività. I vincitori si sono distinti per il loro talento e la capacità di trasformare idee brillanti in progetti straordinari, conquistando la giuria con originalità e competenze tecniche. Scopri chi ha trionfato in questa competizione entusiasmante, celebrando il meglio della programmazione, del design e della gamification!",
     stats: [
@@ -43,7 +43,7 @@ const editionData = [
   },
   {
     year: 2024,
-    image: "/2024-edition-image.jpg",
+    image: "/hero-2024.jpg",
     introText:
       "La terza edizione della Phaser Game Jam ha superato ogni aspettativa, grazie anche al prezioso contributo dell'Ufficio Scolastico Regionale della Regione Campania, che ha permesso di ampliare ulteriormente la platea dei partecipanti. I vincitori di questa edizione si sono distinti per creatività, innovazione e competenze tecniche, dimostrando come il talento possa emergere attraverso la collaborazione e l'impegno. Scopri i protagonisti di questa straordinaria competizione, che continua a crescere ed entusiasmare, celebrando il meglio della programmazione, del design e della gamification!",
     stats: [
@@ -55,7 +55,7 @@ const editionData = [
   },
   {
     year: 2025,
-    image: "/2025-edition-image.jpg",
+    image: "/phaser/2025/edition.jpg",
     introText:
       "La quinta edizione della Phaser Game Jam è in arrivo! Preparati per un'esperienza ancora più coinvolgente e innovativa. Resta sintonizzato per ulteriori dettagli su questa edizione che promette di superare ogni aspettativa.",
     stats: [
@@ -82,16 +82,6 @@ const item = {
   show: { opacity: 1, y: 0 },
 };
 
-const carouselImages = [
-  "/hero.jpg",
-  "/hero.jpg",
-  "/hero.jpg",
-  "/hero.jpg",
-  "/hero.jpg",
-  "/hero.jpg",
-  "/hero.jpg",
-  "/hero.jpg",
-];
 
 export default async function page({
   params,
@@ -190,7 +180,7 @@ export default async function page({
             transition={{ duration: 0.6, delay: 0.6 }}
             className="space-y-8"
           >
-            <h3 className="text-3xl sm:text-4xl font-bold text-white">
+            <h3 className="text-3xl sm:text-4xl font-bold text-[#FFD700]">
               Preparati per la Phaser Game Jam 2025
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -199,7 +189,7 @@ export default async function page({
                   <h4 className="text-xl font-semibold mb-4 text-white">
                     Cosa aspettarsi
                   </h4>
-                  <ul className="space-y-2 text-gray-300">
+                  <ul className="space-y-2 text-gray">
                     <li>Nuove sfide e temi innovativi</li>
                     <li>Mentori esperti del settore</li>
                     <li>Premi esclusivi per i vincitori</li>
@@ -212,7 +202,7 @@ export default async function page({
                   <h4 className="text-xl font-semibold mb-4 text-white">
                     Come partecipare
                   </h4>
-                  <ol className="space-y-2 text-gray-300 list-decimal list-inside">
+                  <ol className="space-y-2 text-gray list-decimal list-inside">
                     <li>Forma il tuo team (max 5 persone)</li>
                     <li>Registrati sul nostro sito</li>
                     <li>Partecipa alle sessioni di formazione</li>
@@ -336,7 +326,7 @@ export default async function page({
                       <h3 className="text-2xl font-semibold mb-4 text-white">
                         Rimani Aggiornato
                       </h3>
-                      <p className="text-gray-300 mb-4">
+                      <p className="text-gray mb-4">
                         Iscriviti alla nostra newsletter per ricevere tutte le
                         novità sulla Phaser Game Jam 2025.
                       </p>
@@ -360,17 +350,17 @@ export default async function page({
                       <ul className="space-y-2 text-gray-300">
                         <li className="flex items-center">
                           <Calendar className="mr-2 h-5 w-5 text-[#FFD700]" />
-                          <span>Apertura iscrizioni: 1 Settembre 2024</span>
+                          <span className="text-gray">Apertura iscrizioni: 1 Settembre 2024</span>
                         </li>
                         <li className="flex items-center">
                           <Calendar className="mr-2 h-5 w-5 text-[#FFD700]" />
-                          <span>
+                          <span className="text-gray">
                             Sessioni di formazione: Ottobre - Dicembre 2024
                           </span>
                         </li>
                         <li className="flex items-center">
                           <Calendar className="mr-2 h-5 w-5 text-[#FFD700]" />
-                          <span>Game Jam: 15-17 Gennaio 2025</span>
+                          <span className="text-gray">Game Jam: 15-17 Gennaio 2025</span>
                         </li>
                       </ul>
                     </CardContent>
@@ -413,7 +403,9 @@ export default async function page({
           </div>
         </section>
 
-        <InfiniteCarousel images={carouselImages} />
+        {!isCurrentEdition && (
+          <InfiniteCarousel images={senior[id -1].media} />
+        )}
       </motion.div>
     </main>
   );

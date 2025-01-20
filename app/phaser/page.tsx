@@ -7,9 +7,9 @@ import { ArrowRight, Calendar, Users, Code, Trophy } from "lucide-react";
 
 const editions = [
   { id: 1, year: "2k22", image: "/2022-edition.jpg" },
-  { id: 2, year: "2k23", image: "/2023-edition.jpg" },
-  { id: 3, year: "2k24", image: "/2024-edition.jpg" },
-  { id: 4, year: "2k25", image: "/2025-edition.jpg" },
+  { id: 2, year: "2k23", image: "/edition-2023.jpg" },
+  { id: 3, year: "2k24", image: "/edition-2024.jpg" },
+  { id: 4, year: "2k25", image: "/phaser/2025/edition.jpg" },
 ];
 
 const features = [
@@ -133,7 +133,7 @@ export default function Phaser() {
                 fill
                 className="object-cover transition-transform duration-700 group-hover:scale-110"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#6F6FFF]/90 via-[#6F6FFF]/40 to-transparent transition-opacity duration-300 group-hover:opacity-90" />
+               <div className="absolute inset-0 bg-gradient-to-t from-[#262657]/95 via-[#262657]/85 to-transparent transition-opacity duration-300 group-hover:opacity-90" />
               <div className="absolute inset-0 flex items-center justify-center transform transition-transform duration-500 group-hover:translate-y-0">
                 <div className="text-center transform transition-all duration-500 group-hover:scale-110">
                   <p className="text-5xl font-bold text-[#FFD700] mb-2">
