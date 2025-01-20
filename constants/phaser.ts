@@ -22,12 +22,12 @@ const senior: Edition[] = [
     year: 2022,
     videoId: "eH6x2dUdYyM",
     media: [
-      "/phaser/2023/img-1.webp",
-      "/phaser/2023/img-2.webp",
-      "/phaser/2023/img-3.webp",
-      "/phaser/2023/img-4.webp",
-      "/phaser/2023/img-5.webp",
-      "/phaser/2023/img-6.webp",
+      "/phaser/2022/img-1.webp",
+      "/phaser/2022/img-2.webp",
+      "/phaser/2022/img-3.webp",
+      "/phaser/2022/img-4.webp",
+      "/phaser/2022/img-5.webp",
+      "/phaser/2022/img-6.webp",
     ],
     mainImage: "main-image-2023.jpg",
     vincitori: [

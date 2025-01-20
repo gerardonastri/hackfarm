@@ -330,7 +330,7 @@ export default async function page({
                         Iscriviti alla nostra newsletter per ricevere tutte le
                         novità sulla Phaser Game Jam 2025.
                       </p>
-                      <div className="flex gap-2">
+                      <div className="flex flex-col sm:flex-row gap-2">
                         <input
                           type="email"
                           placeholder="La tua email"
