@@ -47,14 +47,27 @@ export default function ContactForm() {
   });
 
   async function onSubmit(data: FormValues) {
+    const { nome, cognome, email, messaggio } = data;
+    const payload = {
+      name: `${nome} ${cognome}`, // Rinomina fullName in name
+      email, // email rimane invariato
+      message: messaggio, // Rinomina description in message
+    };
     try {
-      // Simula una chiamata API
-      await new Promise((resolve) => setTimeout(resolve, 1000));
-      toast({
-        title: "Messaggio inviato",
-        description: "Il tuo messaggio è stato inviato con successo!",
-        action: <ToastAction altText="Chiudi">Chiudi</ToastAction>,
+       // Simula una chiamata API
+       const response = await fetch("/api/send-email", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
       });
+
+      if (response.ok) {
+        toast({
+          title: "Messaggio inviato",
+          description: "Il tuo messaggio è stato inviato con successo!",
+          action: <ToastAction altText="Chiudi">Chiudi</ToastAction>,
+        });
+      }
       form.reset();
     } catch (error) {
       toast({
