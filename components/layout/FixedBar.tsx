@@ -27,7 +27,7 @@ const FixedBar = () => {
   ]
 
   return (
-    <nav className="fixed sm:top-5 bottom-[50px] sm:bottom-[unset] left-[50%] translate-x-[-50%] z-50">
+    <nav className="fixed sm:top-5 bottom-[20px] sm:bottom-[unset] left-[50%] translate-x-[-50%] z-50">
       <div className="backdrop-blur-md bg-[rgb(200_255_0_/_0.1)] border border-[rgb(200_255_0_/_0.2)] flex items-center gap-2 rounded-full px-3 py-2 w-[90vw] sm:w-auto shadow-lg shadow-[rgb(200_255_0_/_0.05)]">
         {links.map((item, i) => {
           const isActive = item.link === pathname.split("/")[1]
