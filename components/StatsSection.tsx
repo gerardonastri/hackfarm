@@ -27,7 +27,7 @@ const stats = [
   },
   {
     value: "5",
-    label: "Patner",
+    label: "Partner",
   },
 ];
 

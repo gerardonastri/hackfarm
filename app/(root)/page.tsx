@@ -20,10 +20,20 @@ const page = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={isTextInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
           transition={{ duration: 0.5 }}
-          className="text-5xl md:text-7xl font-bold text-white text-left mb-8"
+          className="text-5xl md:text-7xl font-bold text-white text-left mb-3"
         >
           I Nostri Progetti
         </motion.h3>
+
+        <motion.h4
+          initial={{ opacity: 0, y: 20 }}
+          animate={isTextInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+          className=" text-gray text-md md:max-w-[80%] mb-6"
+        >
+          Phaser Game Jam – Hackathon e Hackathon Junior Come creare un
+          videogame in un week-end
+        </motion.h4>
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}

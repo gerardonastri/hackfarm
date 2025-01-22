@@ -123,7 +123,7 @@ export default function Phaser() {
             key={edition.id}
             variants={item}
             className={`${
-              edition.id === 1 || edition.id === 4 ? "h-[400px]" : "h-[350px]"
+              "h-[350px]"
             } group relative rounded-3xl overflow-hidden transform transition-all duration-500 hover:scale-105 hover:-translate-y-2`}
           >
             <Link href={`/phaser/${edition.id}`} className="block h-full">

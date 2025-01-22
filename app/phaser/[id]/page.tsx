@@ -15,6 +15,8 @@ import {
 import Image from "next/image";
 import Link from "next/link";
 import { senior } from "@/constants/phaser";
+import Loading from "@/components/Loading";
+import { useParams } from "next/navigation";
 
 const editionData = [
   {
@@ -83,13 +85,16 @@ const item = {
 };
 
 
-export default async function page({
-  params,
-}: {
-  params: Promise<{ id: number }>;
-}) {
-  const id = (await params).id;
-  const isCurrentEdition = id == 4; // Assuming 2025 is the 4th edition in the array
+export default function page() {
+  const { id } = useParams(); 
+    
+    if(!id) {
+      return (
+        <Loading />
+      )
+    }
+    const newId = Number(id)
+  const isCurrentEdition = id == "4"; // Assuming 2025 is the 4th edition in the array
 
   return (
     <main className="max-w-[1600px] pt-[60px] mx-auto px-4 lg:px-[3rem]">
@@ -116,8 +121,8 @@ export default async function page({
         <div className="relative">
           <div className="relative h-[400px] rounded-3xl overflow-hidden">
             <Image
-              src={editionData[id - 1].image || "/placeholder.svg"}
-              alt={`Edition ${senior[id - 1].year}`}
+              src={editionData[newId - 1].image || "/placeholder.svg"}
+              alt={`Edition ${senior[newId - 1].year}`}
               fill
               className="object-cover brightness-75"
               priority
@@ -145,7 +150,7 @@ export default async function page({
               transition={{ duration: 0.6, delay: 0.3 }}
               className="text-7xl md:text-8xl lg:text-9xl font-bold text-[#FFD700]"
             >
-              {senior[id - 1].year}
+              {senior[newId - 1].year}
             </motion.h2>
             <motion.p
               initial={{ opacity: 0, y: 10 }}
@@ -167,7 +172,7 @@ export default async function page({
         >
           <div className="grid grid-cols-1 gap-8">
             <p className="text-gray font-secondary text-sm leading-relaxed">
-              {editionData[id - 1].introText}
+              {editionData[newId - 1].introText}
             </p>
           </div>
         </motion.section>
@@ -232,7 +237,7 @@ export default async function page({
               animate="show"
               className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 pt-8"
             >
-              {senior[id - 1].vincitori.map((winner, index) => (
+              {senior[newId - 1].vincitori.map((winner, index) => (
                 <motion.div
                   key={index}
                   variants={item}
@@ -314,7 +319,7 @@ export default async function page({
                 >
                   <div className="h-[2px] w-12 bg-gradient-to-r from-[#6F6FFF] to-transparent" />
                   <span className="text-white/60 text-sm uppercase tracking-wider">
-                    Edizione {senior[id - 1].year}
+                    Edizione {senior[newId - 1].year}
                   </span>
                 </motion.div>
               </div>
@@ -350,17 +355,17 @@ export default async function page({
                       <ul className="space-y-2 text-gray-300">
                         <li className="flex items-center">
                           <Calendar className="mr-2 h-5 w-5 text-[#FFD700]" />
-                          <span className="text-gray">Apertura iscrizioni: 1 Settembre 2024</span>
+                          <span className="text-gray">Apertura iscrizioni: 30 Settembre 2024</span>
                         </li>
                         <li className="flex items-center">
                           <Calendar className="mr-2 h-5 w-5 text-[#FFD700]" />
                           <span className="text-gray">
-                            Sessioni di formazione: Ottobre - Dicembre 2024
+                            Sessioni di formazione: Ottobre - Febbraio 2025
                           </span>
                         </li>
                         <li className="flex items-center">
                           <Calendar className="mr-2 h-5 w-5 text-[#FFD700]" />
-                          <span className="text-gray">Game Jam: 15-17 Gennaio 2025</span>
+                          <span className="text-gray">Game Jam: 28-29 Marzo 2025</span>
                         </li>
                       </ul>
                     </CardContent>
@@ -375,7 +380,7 @@ export default async function page({
                     className="relative rounded-3xl overflow-hidden shadow-2xl"
                   >
                     <div className="aspect-video">
-                      <VideoPlayer videoId={senior[id - 1].videoId} />
+                      <VideoPlayer videoId={senior[newId - 1].videoId} />
                     </div>
                     <div className="absolute inset-0 pointer-events-none rounded-3xl ring-1 ring-white/10" />
                   </motion.div>
@@ -386,7 +391,7 @@ export default async function page({
                     transition={{ duration: 0.6, delay: 0.6 }}
                     className="grid grid-cols-2 sm:grid-cols-4 gap-6 pt-8"
                   >
-                    {editionData[id - 1].stats.map((stat, index) => (
+                    {editionData[newId - 1].stats.map((stat, index) => (
                       <div key={stat.label} className="text-center">
                         <div className="text-2xl sm:text-3xl font-bold text-[#FFD700]">
                           {stat.value}
@@ -404,7 +409,7 @@ export default async function page({
         </section>
 
         {!isCurrentEdition && (
-          <InfiniteCarousel images={senior[id -1].media} />
+          <InfiniteCarousel images={senior[newId -1].media} />
         )}
       </motion.div>
     </main>
