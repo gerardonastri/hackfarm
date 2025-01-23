@@ -16,7 +16,7 @@ const Hero = () => {
         <div className="absolute top-0 left-0 h-full w-full z-1 inset-0 bg-black/65" />
 
         {/* TEXT  */}
-        <div className="absolute top-[30%] left-[50%] translate-x-[-50%] z-10 flex gap-x-[80px]">
+        <div className="absolute top-[20%] sm:top-[30%] left-[50%] translate-x-[-50%] z-10 flex gap-x-[80px]">
           <section className="flex flex-col items-center">
             <h1 className="text-7xl text-center text-[#ffffff] font-secondary font-[300]">
               Benvenuti su Hack Farm E.T.S

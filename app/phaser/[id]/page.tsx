@@ -268,11 +268,10 @@ export default function page() {
                             className="object-contain"
                           />
                         </div>
-                        {index < 3 && (
+                        
                           <div className="absolute -top-2 -right-2 bg-[#6F6FFF] rounded-full p-1">
                             <Trophy className="w-4 h-4 text-white" />
                           </div>
-                        )}
                       </div>
                       <div className="space-y-2 flex-grow">
                         <h4 className="text-lg font-bold text-[#FFD700] group-hover:text-white transition-colors duration-300">
