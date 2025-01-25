@@ -18,6 +18,15 @@ import { senior } from "@/constants/phaser";
 import Loading from "@/components/Loading";
 import { useParams } from "next/navigation";
 
+//FORM STUFF
+import { z } from "zod";
+import { toast } from "sonner";
+import { SubmitHandler, useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { NewsletterFormSchema } from "@/lib/schemas";
+
+import { subscribe } from "@/lib/action";
+
 const editionData = [
   {
     year: 2022,
@@ -84,17 +93,41 @@ const item = {
   show: { opacity: 1, y: 0 },
 };
 
+type Inputs = z.infer<typeof NewsletterFormSchema>;
 
 export default function page() {
-  const { id } = useParams(); 
-    
-    if(!id) {
-      return (
-        <Loading />
-      )
-    }
-    const newId = Number(id)
+  const { id } = useParams();
+
+  if (!id) {
+    return <Loading />;
+  }
+  const newId = Number(id);
   const isCurrentEdition = id == "4"; // Assuming 2025 is the 4th edition in the array
+
+  //NEWSLETTER FORM
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors, isSubmitting },
+  } = useForm<Inputs>({
+    resolver: zodResolver(NewsletterFormSchema),
+    defaultValues: {
+      email: "",
+    },
+  });
+
+  const processForm: SubmitHandler<Inputs> = async (data) => {
+    const result = await subscribe(data);
+
+    if (result?.error) {
+      toast.error("An error occurred! Please try again.");
+      return;
+    }
+
+    toast.success("Subscribed successfully!");
+    reset();
+  };
 
   return (
     <main className="max-w-[1600px] pt-[60px] mx-auto px-4 lg:px-[3rem]">
@@ -268,10 +301,10 @@ export default function page() {
                             className="object-contain"
                           />
                         </div>
-                        
-                          <div className="absolute -top-2 -right-2 bg-[#6F6FFF] rounded-full p-1">
-                            <Trophy className="w-4 h-4 text-white" />
-                          </div>
+
+                        <div className="absolute -top-2 -right-2 bg-[#6F6FFF] rounded-full p-1">
+                          <Trophy className="w-4 h-4 text-white" />
+                        </div>
                       </div>
                       <div className="space-y-2 flex-grow">
                         <h4 className="text-lg font-bold text-[#FFD700] group-hover:text-white transition-colors duration-300">
@@ -334,16 +367,29 @@ export default function page() {
                         Iscriviti alla nostra newsletter per ricevere tutte le
                         novità sulla Phaser Game Jam 2025.
                       </p>
-                      <div className="flex flex-col sm:flex-row gap-2">
+                      <form
+                        onSubmit={handleSubmit(processForm)}
+                        className="flex flex-col sm:flex-row gap-2"
+                      >
                         <input
                           type="email"
                           placeholder="La tua email"
                           className="flex-grow px-4 py-2 rounded-md bg-white/10 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#6F6FFF]"
+                          {...register("email")}
                         />
-                        <button className="px-4 py-2 bg-[#6F6FFF] text-white rounded-md hover:bg-[#5050FF] transition-colors duration-300">
-                          Iscriviti
+                        {errors.email?.message && (
+                          <p className="ml-1 mt-2 text-sm text-rose-400">
+                            {errors.email.message}
+                          </p>
+                        )}
+                        <button
+                          type="submit"
+                          disabled={isSubmitting}
+                          className="px-4 py-2 bg-[#6F6FFF] text-white rounded-md hover:bg-[#5050FF] transition-colors duration-300"
+                        >
+                          {isSubmitting ? "Iscrizione..." : "Iscriviti"}
                         </button>
-                      </div>
+                      </form>
                     </CardContent>
                   </Card>
                   <Card className="bg-white/5 backdrop-blur-sm border-white/10">
@@ -354,7 +400,9 @@ export default function page() {
                       <ul className="space-y-2 text-gray-300">
                         <li className="flex items-center">
                           <Calendar className="mr-2 h-5 w-5 text-[#FFD700]" />
-                          <span className="text-gray">Apertura iscrizioni: 30 Settembre 2024</span>
+                          <span className="text-gray">
+                            Apertura iscrizioni: 30 Settembre 2024
+                          </span>
                         </li>
                         <li className="flex items-center">
                           <Calendar className="mr-2 h-5 w-5 text-[#FFD700]" />
@@ -364,7 +412,9 @@ export default function page() {
                         </li>
                         <li className="flex items-center">
                           <Calendar className="mr-2 h-5 w-5 text-[#FFD700]" />
-                          <span className="text-gray">Game Jam: 28-29 Marzo 2025</span>
+                          <span className="text-gray">
+                            Game Jam: 28-29 Marzo 2025
+                          </span>
                         </li>
                       </ul>
                     </CardContent>
@@ -408,7 +458,7 @@ export default function page() {
         </section>
 
         {!isCurrentEdition && (
-          <InfiniteCarousel images={senior[newId -1].media} />
+          <InfiniteCarousel images={senior[newId - 1].media} />
         )}
       </motion.div>
     </main>
