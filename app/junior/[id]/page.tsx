@@ -18,6 +18,17 @@ import { junior } from "@/constants/junior";
 import { useParams } from "next/navigation";
 import Loading from "@/components/Loading";
 
+//FORM
+import { z } from "zod";
+import { toast } from "sonner";
+import { SubmitHandler, useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { NewsletterFormSchema } from "@/lib/schemas";
+
+import { subscribe } from "@/lib/action";
+type Inputs = z.infer<typeof NewsletterFormSchema>;
+
+//DATA
 const editionData = [
   {
     year: 2023,
@@ -69,17 +80,39 @@ const item = {
   show: { opacity: 1, y: 0 },
 };
 
-
 export default function page() {
-  const { id } = useParams(); 
-  
-  if(!id) {
-    return (
-      <Loading />
-    )
+  const { id } = useParams();
+
+  if (!id) {
+    return <Loading />;
   }
-  const newId = Number(id)
+  const newId = Number(id);
   const isCurrentEdition = id && id == "3"; // Assuming 2025 is the 4th edition in the array
+
+  //NEWSLETTER FORM
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors, isSubmitting },
+  } = useForm<Inputs>({
+    resolver: zodResolver(NewsletterFormSchema),
+    defaultValues: {
+      email: "",
+    },
+  });
+
+  const processForm: SubmitHandler<Inputs> = async (data) => {
+    const result = await subscribe(data);
+
+    if (result?.error) {
+      toast.error("An error occurred! Please try again.");
+      return;
+    }
+
+    toast.success("Subscribed successfully!");
+    reset();
+  };
 
   return (
     <main className="max-w-[1600px] pt-[60px] mx-auto px-4 lg:px-[3rem]">
@@ -183,7 +216,9 @@ export default function page() {
                     <li>Sfide creative</li>
                     <li>Supporto e formazione da parte di docenti esperti</li>
                     <li>Riconoscimenti e premi per i progetti migliori</li>
-                    <li>Collaborazione e confronto tra studenti di diverse scuole</li>
+                    <li>
+                      Collaborazione e confronto tra studenti di diverse scuole
+                    </li>
                   </ul>
                 </CardContent>
               </Card>
@@ -194,7 +229,15 @@ export default function page() {
                   </h4>
                   <ol className="space-y-2 text-gray list-decimal list-inside">
                     <li>Forma il tuo team (da 2 a 4 studenti)</li>
-                    <li>Registrati <a href="https://forms.gle/Y62WNQ8sGq6uECu3A" className=" underline text-blue-600">Qui</a></li>
+                    <li>
+                      Registrati{" "}
+                      <a
+                        href="https://forms.gle/Y62WNQ8sGq6uECu3A"
+                        className=" underline text-blue-600"
+                      >
+                        Qui
+                      </a>
+                    </li>
                     <li>Partecipa alle sessioni di formazione</li>
                     <li>Preparati per un'esperienza di pura creatività</li>
                   </ol>
@@ -253,9 +296,9 @@ export default function page() {
                             className="object-contain"
                           />
                         </div>
-                          <div className="absolute -top-2 -right-2 bg-[#6F6FFF] rounded-full p-1">
-                            <Trophy className="w-4 h-4 text-white" />
-                          </div>
+                        <div className="absolute -top-2 -right-2 bg-[#6F6FFF] rounded-full p-1">
+                          <Trophy className="w-4 h-4 text-white" />
+                        </div>
                       </div>
                       <div className="space-y-2 flex-grow">
                         <h4 className="text-lg font-bold text-[#FFD700] group-hover:text-white transition-colors duration-300">
@@ -315,16 +358,25 @@ export default function page() {
                         Iscriviti alla nostra newsletter per ricevere tutte le
                         novità sull’Hackathon junior 2025.
                       </p>
-                      <div className="flex flex-col sm:flex-row gap-2">
+                      <form
+                        onSubmit={handleSubmit(processForm)}
+                        className="flex flex-col sm:flex-row gap-2"
+                      >
                         <input
                           type="email"
                           placeholder="La tua email"
                           className="flex-grow px-4 py-2 rounded-md bg-white/10 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#6F6FFF]"
+                          {...register("email")}
                         />
+                        {errors.email?.message && (
+                          <p className="ml-1 mt-2 text-sm text-rose-400">
+                            {errors.email.message}
+                          </p>
+                        )}
                         <button className="px-4 py-2 bg-[#6F6FFF] text-white rounded-md hover:bg-[#5050FF] transition-colors duration-300">
                           Iscriviti
                         </button>
-                      </div>
+                      </form>
                     </CardContent>
                   </Card>
                   <Card className="bg-white/5 backdrop-blur-sm border-white/10">
@@ -335,7 +387,9 @@ export default function page() {
                       <ul className="space-y-2 text-gray-300">
                         <li className="flex items-center">
                           <Calendar className="mr-2 h-5 w-5 text-[#FFD700]" />
-                          <span className="text-gray">Apertura iscrizioni: 1 Novembre 2024</span>
+                          <span className="text-gray">
+                            Apertura iscrizioni: 1 Novembre 2024
+                          </span>
                         </li>
                         <li className="flex items-center">
                           <Calendar className="mr-2 h-5 w-5 text-[#FFD700]" />
