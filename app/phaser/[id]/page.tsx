@@ -26,6 +26,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { NewsletterFormSchema } from "@/lib/schemas";
 
 import { subscribe } from "@/lib/action";
+import SponsorsSection from "@/components/Sponsor";
 
 const editionData = [
   {
@@ -37,7 +38,7 @@ const editionData = [
       { label: "Partecipanti alla formazione", value: "300" },
       { label: "Team in gara", value: "13" },
       { label: "Developer", value: "70" },
-      { label: "Ore di gaming", value: "48" },
+      { label: "Ore di jamming", value: "48" },
     ],
   },
   {
@@ -49,7 +50,7 @@ const editionData = [
       { label: "Partecipanti alla formazione", value: "600" },
       { label: "Team in gara", value: "24" },
       { label: "Developer", value: "120" },
-      { label: "Ore di gaming", value: "48" },
+      { label: "Ore di jamming", value: "48" },
     ],
   },
   {
@@ -61,7 +62,7 @@ const editionData = [
       { label: "Partecipanti alla formazione", value: "1300" },
       { label: "Team in gara", value: "28" },
       { label: "Developer", value: "220" },
-      { label: "Ore di gaming", value: "48" },
+      { label: "Ore di jamming", value: "48" },
     ],
   },
   {
@@ -73,7 +74,7 @@ const editionData = [
       { label: "Partecipanti previsti", value: "1500+", icon: Users },
       { label: "Team attesi", value: "35+", icon: Users },
       { label: "Developer stimati", value: "300+", icon: Gamepad2 },
-      { label: "Ore di gaming", value: "48", icon: Clock },
+      { label: "Ore di jamming", value: "48", icon: Clock },
     ],
   },
 ];
@@ -302,8 +303,9 @@ export default function page() {
                           />
                         </div>
 
-                        <div className="absolute -top-2 -right-2 bg-[#6F6FFF] rounded-full p-1">
-                          <Trophy className="w-4 h-4 text-white" />
+                        <div className="absolute -top-2 -right-2 bg-[#6F6FFF] rounded-full w-[30px] h-[30px] flex items-center justify-center">
+                          {/* <Trophy className="w-4 h-4 text-white" /> */}
+                          <span className="text-white">{winner.rank}°</span>
                         </div>
                       </div>
                       <div className="space-y-2 flex-grow">
@@ -458,7 +460,11 @@ export default function page() {
         </section>
 
         {!isCurrentEdition && (
-          <InfiniteCarousel images={senior[newId - 1].media} />
+          <>
+            <InfiniteCarousel images={senior[newId - 1].media} />
+            {/* // SPONSOR */}
+            <SponsorsSection year={editionData[newId - 1].year.toString()} />
+          </>
         )}
       </motion.div>
     </main>
