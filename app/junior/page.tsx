@@ -30,7 +30,7 @@ const features = [
 const editions = [
   { id: 1, year: "2k23", image: "/junior/2023-edition.jpg" },
   { id: 2, year: "2k24", image: "/junior/2024-edition.jpg" },
-  { id: 3, year: "2k25", image: "/phaser/2025/edition.jpg" },
+  { id: 3, year: "2k25", image: "/junior/2025-junior.webp" },
 ];
 
 export default function Hackathon() {
