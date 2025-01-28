@@ -70,7 +70,7 @@ const editionData = [
     year: 2025,
     image: "/phaser/2025/edition.jpg",
     introText:
-      "La quinta edizione della Phaser Game Jam è in arrivo! Preparati per un'esperienza ancora più coinvolgente e innovativa. Resta sintonizzato per ulteriori dettagli su questa edizione che promette di superare ogni aspettativa.",
+      "La quarta edizione della Phaser Game Jam è in arrivo! Preparati per un'esperienza ancora più coinvolgente e innovativa. Resta sintonizzato per ulteriori dettagli su questa edizione che promette di superare ogni aspettativa.",
     stats: [
       { label: "Partecipanti previsti", value: "1500+", icon: Users },
       { label: "Team attesi", value: "35+", icon: Users },
