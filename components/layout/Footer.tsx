@@ -9,7 +9,7 @@ export default function Footer() {
     <footer className="bg-black text-white/80 py-16 mt-[150px]">
       <div className="max-w-[1700px] mx-auto px-4 md:px-[3rem]">
         {/* Header Section */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
+        {/* <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
           <div className="max-w-xl">
             <h2 className="text-5xl font-light text-white mb-6">
               Engage with Us in Conversation.
@@ -30,7 +30,7 @@ export default function Footer() {
             />
             <div className="overlay"></div>
           </div>
-        </div>
+        </div> */}
 
         {/* Footer Links Section */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
@@ -152,6 +152,24 @@ export default function Footer() {
             />
           </div>
         </div>
+      </div>
+      <div className="mt-12 pt-8 border-t border-white/10 text-center text-sm text-white/60">
+        <p>
+          Developed by{" "}
+          <Link
+            href="https://gerardonastri.it"
+            className="hover:text-white transition-colors"
+          >
+            Gerardo Nastri
+          </Link>{" "}
+          | Designed by{" "}
+          <Link
+            href="https://www.instagram.com/sabatino.de.rosa/"
+            className="hover:text-white transition-colors"
+          >
+            Sabatino De Rosa
+          </Link>
+        </p>
       </div>
     </footer>
   );

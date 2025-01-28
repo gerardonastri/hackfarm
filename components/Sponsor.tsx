@@ -15,46 +15,47 @@ type SponsorsData = {
 
 const sponsorsData: SponsorsData = {
   "2022": [
-    { name: "4x4 System", logo: "/sponsors/2022/4x4-system.png" },
-    { name: "Blexin", logo: "/sponsors/2022/blexin.png" },
-    { name: "Healthware", logo: "/sponsors/2022/healthware.png" },
-    { name: "Nexsoft", logo: "/sponsors/2022/nexsoft.png" },
+    { name: "4x4 System", logo: "/sponsor/sponsor-1.png" },
+    { name: "Blexin", logo: "/sponsor/sponsor-2.png" },
+    { name: "Healthware", logo: "/sponsor/sponsor-3.png" },
+    { name: "Nexsoft", logo: "/sponsor/sponsor-4.png" },
     {
       name: "Palazzo Innovazione",
-      logo: "/sponsors/2022/palazzo-innovazione.png",
+      logo: "/sponsor/sponsor-5.png",
     },
-    { name: "DaCar", logo: "/sponsors/2022/dacar.png" },
-    { name: "Studio Murano", logo: "/sponsors/2022/studio-murano.png" },
-    { name: "Studio Legale Sisto", logo: "/sponsors/2022/studio-sisto.png" },
-    { name: "Tuko Productions", logo: "/sponsors/2022/tuko.png" },
-    { name: "weBeetle", logo: "/sponsors/2022/webeetle.png" },
-    { name: "CUS Salerno", logo: "/sponsors/2022/cus-salerno.png" },
+    { name: "DaCar", logo: "/sponsor/sponsor-6.png" },
+    { name: "Studio Murano", logo: "/sponsor/sponsor-7.png" },
+    { name: "Studio Legale Sisto", logo: "/sponsor/sponsor-8.png" },
+    { name: "Tuko Productions", logo: "/sponsor/sponsor-9.png" },
+    { name: "weBeetle", logo: "/sponsor/sponsor-10.png" },
+    { name: "CUS Salerno", logo: "/sponsor/sponsor-11.png" },
   ],
   "2023": [
-    { name: "Accenture", logo: "/sponsors/2023/accenture.png" },
-    { name: "NTT Data", logo: "/sponsors/2023/ntt-data.png" },
-    { name: "Healthware", logo: "/sponsors/2023/healthware.png" },
-    { name: "Nexsoft", logo: "/sponsors/2023/nexsoft.png" },
-    {
-      name: "Palazzo Innovazione",
-      logo: "/sponsors/2023/palazzo-innovazione.png",
-    },
-    { name: "DaCar", logo: "/sponsors/2023/dacar.png" },
-    { name: "Studio Murano", logo: "/sponsors/2023/studio-murano.png" },
-    { name: "weBeetle", logo: "/sponsors/2023/webeetle.png" },
+    { name: "Nexsoft", logo: "/sponsor/sponsor-4.png" },
+    { name: "eTuitus", logo: "/sponsor/sponsor-12.png" },
+    { name: "IndieGala", logo: "/sponsor/sponsor-13.png" },
+    { name: "Blexin", logo: "/sponsor/sponsor-2.png" },
+    { name: "Sella", logo: "/sponsor/sponsor-15.png" },
+    { name: "weBeetle", logo: "/sponsor/sponsor-10.png" },
+    { name: "CodeMagic", logo: "/sponsor/sponsor-16.png" },
   ],
   "2024": [
-    { name: "Deloitte", logo: "/sponsors/2024/deloitte.png" },
-    { name: "NTT Data", logo: "/sponsors/2024/ntt-data.png" },
-    { name: "Healthware", logo: "/sponsors/2024/healthware.png" },
-    { name: "Nexsoft", logo: "/sponsors/2024/nexsoft.png" },
-    {
-      name: "Palazzo Innovazione",
-      logo: "/sponsors/2024/palazzo-innovazione.png",
-    },
-    { name: "DaCar", logo: "/sponsors/2024/dacar.png" },
-    { name: "Studio Murano", logo: "/sponsors/2024/studio-murano.png" },
-    { name: "weBeetle", logo: "/sponsors/2024/webeetle.png" },
+    { name: "eTuitus", logo: "/sponsor/sponsor-12.png" },
+    { name: "IndieGala", logo: "/sponsor/sponsor-13.png" },
+    { name: "SIP&T", logo: "/sponsor/sponsor-17.png" },
+    { name: "Pierro Group", logo: "/sponsor/sponsor-18.png" },
+    { name: "ABCD Entertainment", logo: "/sponsor/sponsor-19.png" },
+    { name: "Zoo Zoo Technology", logo: "/sponsor/sponsor-20.png" },
+    { name: "Case Lab", logo: "/sponsor/sponsor-26.png" },
+    { name: "New Media Adventures", logo: "/sponsor/sponsor-27.png" },
+    { name: "Banca Monte Pruno", logo: "/sponsor/sponsor-21.png" },
+    { name: "Nexsoft", logo: "/sponsor/sponsor-4.png" },
+    { name: "weBeetle", logo: "/sponsor/sponsor-10.png" },
+    { name: "Fondazione Saccone", logo: "/sponsor/sponsor-22.png" },
+    { name: "Galdieri Auto", logo: "/sponsor/sponsor-23.webp" },
+    { name: "Matteo Napoli", logo: "/sponsor/sponsor-24.png" },
+    { name: "Blexin", logo: "/sponsor/sponsor-2.png" },
+    { name: "Virvelle", logo: "/sponsor/sponsor-25.svg" },
   ],
 };
 
@@ -82,67 +83,67 @@ export default function SponsorsSection({ year }: SponsorsSectionProps) {
 
   return (
     <motion.section
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6 }}
-      className="py-24"
-    >
-      <div className="space-y-12">
-        <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-6">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#FFD700]">
-            Sponsor dell'evento
-          </h2>
-          <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="flex items-center gap-2"
-          >
-            <div className="h-[2px] w-12 bg-gradient-to-r from-[#6F6FFF] to-transparent" />
-            <span className="text-white/60 text-sm uppercase tracking-wider">
-              Edizione {year}
-            </span>
-          </motion.div>
-        </div>
-
+    initial={{ opacity: 0, y: 20 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.6 }}
+    className="py-24"
+  >
+    <div className="space-y-12">
+      <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-6">
+        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#FFD700]">Sponsor dell'evento</h2>
         <motion.div
-          variants={container}
-          initial="hidden"
-          animate="show"
-          className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8"
+          initial={{ opacity: 0, x: 20 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="flex items-center gap-2"
         >
-          {sponsors.map((sponsor) => (
-            <motion.div
-              key={sponsor.name}
-              variants={item}
-              className="relative group"
-            >
-              <Card className="bg-white/5 backdrop-blur-sm border-white/10 hover:border-[#FFD700]/20 transition-all duration-300 overflow-hidden">
-                <CardContent className="p-6">
-                  <div className="relative aspect-[3/2] flex items-center justify-center">
-                    <Image
-                      src={sponsor.logo || "/placeholder.svg"}
-                      alt={`${sponsor.name} logo`}
-                      fill
-                      className="object-contain filter brightness-90 group-hover:brightness-100 transition-all duration-300"
-                    />
-                  </div>
-                </CardContent>
-              </Card>
-            </motion.div>
-          ))}
+          <div className="h-[2px] w-12 bg-gradient-to-r from-[#6F6FFF] to-transparent" />
+          <span className="text-white/60 text-sm uppercase tracking-wider">Edizione {year}</span>
         </motion.div>
-
-        <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.6, delay: 0.8 }}
-          className="text-center text-white/60 text-sm mt-8"
-        >
-          Un ringraziamento speciale a tutti i nostri sponsor che hanno reso
-          possibile questa edizione
-        </motion.p>
       </div>
-    </motion.section>
+
+      <motion.div
+        variants={container}
+        initial="hidden"
+        animate="show"
+        className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8"
+      >
+        {sponsors.map((sponsor) => (
+          <motion.div key={sponsor.name} variants={item} className="relative group">
+            <Card className="bg-[#1a1a1a] hover:bg-[#242424] border-white/5 hover:border-[#FFD700]/20 transition-all duration-300 overflow-hidden">
+              <CardContent className="p-8 relative">
+                {/* Overlay gradient for better contrast */}
+                <div className="absolute inset-0 bg-gradient-to-br from-black/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+
+                {/* Container for the image with padding control */}
+                <div className="relative aspect-[3/2] flex items-center justify-center p-4">
+                  <Image
+                    src={sponsor.logo || "/placeholder.svg"}
+                    alt={`${sponsor.name} logo`}
+                    fill
+                    className="object-contain mix-blend-normal filter group-hover:brightness-110 group-hover:contrast-125 transition-all duration-300"
+                  />
+                </div>
+
+                {/* Optional: Sponsor name on hover */}
+                <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <p className="text-center text-white/90 text-sm py-2 px-4">{sponsor.name}</p>
+                </div>
+              </CardContent>
+            </Card>
+          </motion.div>
+        ))}
+      </motion.div>
+
+      <motion.p
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.6, delay: 0.8 }}
+        className="text-center text-white/60 text-sm mt-8"
+      >
+        Un ringraziamento speciale a tutti i nostri sponsor che hanno reso possibile questa edizione
+      </motion.p>
+    </div>
+  </motion.section>
   );
 }
