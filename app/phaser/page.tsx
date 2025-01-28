@@ -197,7 +197,7 @@ export default function Phaser() {
       </motion.div>
 
       {/* CTA Section */}
-      <motion.div
+      {/* <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
@@ -218,7 +218,7 @@ export default function Phaser() {
           Registrati ora
           <ArrowRight className="ml-2 w-5 h-5" />
         </Link>
-      </motion.div>
+      </motion.div> */}
     </div>
   );
 }

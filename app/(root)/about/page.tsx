@@ -5,6 +5,7 @@ import Image from "next/image";
 import { useInView } from "react-intersection-observer";
 import { Card } from "@/components/ui/card";
 import { BookOpen, Users, Globe, Briefcase, Lightbulb } from "lucide-react";
+import CtaSection from "@/components/CTA";
 
 const objectives = [
   {
@@ -207,7 +208,7 @@ export default function AboutPage() {
           </div>
         </motion.div>
 
-        <motion.div
+        {/* <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.4 }}
@@ -223,7 +224,8 @@ export default function AboutPage() {
           <button className="bg-[#c8ff00] text-black px-8 py-3 rounded-full font-semibold hover:bg-[#a6d900] transition-colors duration-300">
             Partecipa ora
           </button>
-        </motion.div>
+        </motion.div> */}
+        <CtaSection />
       </div>
     </div>
   );
