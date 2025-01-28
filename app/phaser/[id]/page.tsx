@@ -27,6 +27,7 @@ import { NewsletterFormSchema } from "@/lib/schemas";
 
 import { subscribe } from "@/lib/action";
 import SponsorsSection from "@/components/Sponsor";
+import SchoolsSection from "./_components/school-section";
 
 const editionData = [
   {
@@ -213,44 +214,46 @@ export default function page() {
 
         {isCurrentEdition ? (
           // Content for 2025 edition
-          <motion.section
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.6 }}
-            className="space-y-8"
-          >
-            <h3 className="text-3xl sm:text-4xl font-bold text-[#FFD700]">
-              Preparati per la Phaser Game Jam 2025
-            </h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <Card className="bg-white/5 backdrop-blur-sm border-white/10">
-                <CardContent className="p-6">
-                  <h4 className="text-xl font-semibold mb-4 text-white">
-                    Cosa aspettarsi
-                  </h4>
-                  <ul className="space-y-2 text-gray">
-                    <li>Nuove sfide e temi innovativi</li>
-                    <li>Mentori esperti del settore</li>
-                    <li>Premi esclusivi per i vincitori</li>
-                    <li>Networking con professionisti del gaming</li>
-                  </ul>
-                </CardContent>
-              </Card>
-              <Card className="bg-white/5 backdrop-blur-sm border-white/10">
-                <CardContent className="p-6">
-                  <h4 className="text-xl font-semibold mb-4 text-white">
-                    Come partecipare
-                  </h4>
-                  <ol className="space-y-2 text-gray list-decimal list-inside">
-                    <li>Forma il tuo team (max 5 persone)</li>
-                    <li>Registrati sul nostro sito</li>
-                    <li>Partecipa alle sessioni di formazione</li>
-                    <li>Preparati per 48 ore di pura creatività!</li>
-                  </ol>
-                </CardContent>
-              </Card>
-            </div>
-          </motion.section>
+          <>
+            <motion.section
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.6 }}
+              className="space-y-8"
+            >
+              <h3 className="text-3xl sm:text-4xl font-bold text-[#FFD700]">
+                Preparati per la Phaser Game Jam 2025
+              </h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <Card className="bg-white/5 backdrop-blur-sm border-white/10">
+                  <CardContent className="p-6">
+                    <h4 className="text-xl font-semibold mb-4 text-white">
+                      Cosa aspettarsi
+                    </h4>
+                    <ul className="space-y-2 text-gray">
+                      <li>Nuove sfide e temi innovativi</li>
+                      <li>Mentori esperti del settore</li>
+                      <li>Premi esclusivi per i vincitori</li>
+                      <li>Networking con professionisti del gaming</li>
+                    </ul>
+                  </CardContent>
+                </Card>
+                <Card className="bg-white/5 backdrop-blur-sm border-white/10">
+                  <CardContent className="p-6">
+                    <h4 className="text-xl font-semibold mb-4 text-white">
+                      Come partecipare
+                    </h4>
+                    <ol className="space-y-2 text-gray list-decimal list-inside">
+                      <li>Forma il tuo team (max 5 persone)</li>
+                      <li>Registrati sul nostro sito</li>
+                      <li>Partecipa alle sessioni di formazione</li>
+                      <li>Preparati per 48 ore di pura creatività!</li>
+                    </ol>
+                  </CardContent>
+                </Card>
+              </div>
+            </motion.section>
+          </>
         ) : (
           // Content for past editions
           <>
@@ -458,6 +461,8 @@ export default function page() {
             </motion.div>
           </div>
         </section>
+
+        {isCurrentEdition && <SchoolsSection />}
 
         {!isCurrentEdition && (
           <>
