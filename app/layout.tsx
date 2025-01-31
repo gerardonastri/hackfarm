@@ -5,6 +5,8 @@ import "./globals.css";
 import CookieBanner from "@/components/CookieBanner";
 const myFont = localFont({ src: "./font.otf" });
 
+import { Analytics } from "@vercel/analytics/react"
+
 const poppins = Poppins({
   style: "normal",
   variable: "--font-poppins",
@@ -79,6 +81,7 @@ export default function RootLayout({
       >
         {children}
         <CookieBanner />
+        <Analytics />
       </body>
     </html>
   );
