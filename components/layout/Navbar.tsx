@@ -8,7 +8,7 @@ const Navbar = () => {
     <nav className="absolute top-5 px-[2rem] lg:left-0 w-full z-[50]">
       <div className="lg:max-w-[1600px] mx-auto flex items-center justify-between">
         <Link href="/" className="w-fit block">
-          <h2 className="text-white font-bold text-3xl">Hackfarm</h2>
+          <h2 className="text-white font-bold text-3xl gradient-title">Hackfarm</h2>
         </Link>
         <div className="flex items-center">
           <FixedBar />

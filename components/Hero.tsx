@@ -18,7 +18,7 @@ const Hero = () => {
         {/* TEXT  */}
         <div className="absolute top-[20%] sm:top-[30%] left-[50%] translate-x-[-50%] z-10 flex gap-x-[80px]">
           <section className="flex flex-col items-center">
-            <h1 className="text-7xl text-center text-[#ffffff] font-secondary font-[300]">
+            <h1 className="gradient-title text-7xl text-center text-[#ffffff] font-secondary font-[300]">
               Benvenuti su Hack Farm E.T.S
             </h1>
             <p className="text-[#D9D9D9] opacity-90 md:max-w-[70%] mt-6 mb-2 text-center text-sm font-secondary">
