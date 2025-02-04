@@ -153,23 +153,19 @@ export default function Footer() {
           </div>
         </div>
       </div>
-      <div className="mt-12 pt-8 border-t border-white/10 text-center text-sm text-white/60">
-        <p>
-          Developed by{" "}
-          <Link
-            href="https://gerardonastri.it"
-            className="hover:text-white transition-colors"
-          >
-            Gerardo Nastri
-          </Link>{" "}
-          | Designed by{" "}
-          <Link
-            href="https://www.instagram.com/sabatino.de.rosa/"
-            className="hover:text-white transition-colors"
-          >
-            Sabatino De Rosa
-          </Link>
-        </p>
+      <div className="flex flex-col sm:flex-row sm:justify-center gap-2 sm:gap-0 pb-[80px] sm:pb-0 mt-12 pt-8 border-t border-white/10 text-center text-sm text-white/60">
+      <p className="text-center sm:text-left">
+        Developed by{" "}
+        <Link href="https://gerardonastri.it" className="hover:text-white transition-colors">
+          Gerardo Nastri
+        </Link>
+      </p>
+      <p className="text-center sm:text-left">
+        <span className="hidden sm:inline ml-1"> |</span> Designed by{" "}
+        <Link href="https://www.instagram.com/sabatino.de.rosa/" className="hover:text-white transition-colors">
+          Sabatino De Rosa
+        </Link>
+      </p>
       </div>
     </footer>
   );
