@@ -22,7 +22,7 @@ const schools: School[] = [
   { name: 'IIS "GENOVESI-DA VINCI"', province: "Salerno" },
   { name: 'LICEO SCIENTIFICO "A. GENOINO"', province: "Salerno" },
   { name: 'LICEO SCIENTIFICO "C. PISACANE" - PADULA', province: "Salerno" },
-  { name: 'IIS "GENOVESI-DA VINCI"', province: "Salerno" },
+  { name: 'LiCEO STATALE "ALFANO 1"', province: "Salerno" },
   { name: 'IIS "DON MILANI"', province: "Napoli" },
   { name: 'IIS "MASULLO-THETI" - NOLA', province: "Napoli" },
   { name: 'ISIS "EINAUDI-GIORDANO"', province: "Napoli" },
