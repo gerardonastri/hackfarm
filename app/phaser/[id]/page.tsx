@@ -1,33 +1,26 @@
-"use client";
+"use client"
 
-import InfiniteCarousel from "@/components/Carousel";
-import { Card, CardContent } from "@/components/ui/card";
-import VideoPlayer from "@/components/VideoPlayer";
-import { motion } from "framer-motion";
-import {
-  ArrowLeft,
-  Trophy,
-  Calendar,
-  Users,
-  Clock,
-  Gamepad2,
-} from "lucide-react";
-import Image from "next/image";
-import Link from "next/link";
-import { senior } from "@/constants/phaser";
-import Loading from "@/components/Loading";
-import { useParams } from "next/navigation";
+import InfiniteCarousel from "@/components/Carousel"
+import { Card, CardContent } from "@/components/ui/card"
+import VideoPlayer from "@/components/VideoPlayer"
+import { motion } from "framer-motion"
+import { ArrowLeft, Calendar, Users, Clock, Gamepad2 } from "lucide-react"
+import Image from "next/image"
+import Link from "next/link"
+import { senior } from "@/constants/phaser"
+import Loading from "@/components/Loading"
+import { useParams } from "next/navigation"
 
 //FORM STUFF
-import { z } from "zod";
-import { toast } from "sonner";
-import { SubmitHandler, useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { NewsletterFormSchema } from "@/lib/schemas";
+import type { z } from "zod"
+import { toast } from "sonner"
+import { type SubmitHandler, useForm } from "react-hook-form"
+import { zodResolver } from "@hookform/resolvers/zod"
+import { NewsletterFormSchema } from "@/lib/schemas"
 
-import { subscribe } from "@/lib/action";
-import SponsorsSection from "@/components/Sponsor";
-import SchoolsSection from "./_components/school-section";
+import { subscribe } from "@/lib/action"
+import SponsorsSection from "@/components/Sponsor"
+import SchoolsSection from "./_components/school-section"
 
 const editionData = [
   {
@@ -78,7 +71,7 @@ const editionData = [
       { label: "Ore di jamming", value: "48", icon: Clock },
     ],
   },
-];
+]
 
 const container = {
   hidden: { opacity: 0 },
@@ -88,23 +81,23 @@ const container = {
       staggerChildren: 0.1,
     },
   },
-};
+}
 
 const item = {
   hidden: { opacity: 0, y: 20 },
   show: { opacity: 1, y: 0 },
-};
+}
 
-type Inputs = z.infer<typeof NewsletterFormSchema>;
+type Inputs = z.infer<typeof NewsletterFormSchema>
 
 export default function page() {
-  const { id } = useParams();
+  const { id } = useParams()
 
   if (!id) {
-    return <Loading />;
+    return <Loading />
   }
-  const newId = Number(id);
-  const isCurrentEdition = id == "4"; // Assuming 2025 is the 4th edition in the array
+  const newId = Number(id)
+  const isCurrentEdition = id == "4" // Assuming 2025 is the 4th edition in the array
 
   //NEWSLETTER FORM
   const {
@@ -117,19 +110,19 @@ export default function page() {
     defaultValues: {
       email: "",
     },
-  });
+  })
 
   const processForm: SubmitHandler<Inputs> = async (data) => {
-    const result = await subscribe(data);
+    const result = await subscribe(data)
 
     if (result?.error) {
-      toast.error("An error occurred! Please try again.");
-      return;
+      toast.error("An error occurred! Please try again.")
+      return
     }
 
-    toast.success("Subscribed successfully!");
-    reset();
-  };
+    toast.success("Subscribed successfully!")
+    reset()
+  }
 
   return (
     <main className="max-w-[1600px] pt-[60px] mx-auto px-4 lg:px-[3rem]">
@@ -172,12 +165,7 @@ export default function page() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="relative w-40 h-40 mb-4"
             >
-              <Image
-                src="/logo-phaser.png"
-                alt="Phaser Game Jam Logo"
-                fill
-                className="object-contain"
-              />
+              <Image src="/logo-phaser.png" alt="Phaser Game Jam Logo" fill className="object-contain" />
             </motion.div>
             <motion.h2
               initial={{ opacity: 0, y: 10 }}
@@ -206,14 +194,11 @@ export default function page() {
           className="space-y-8"
         >
           <div className="grid grid-cols-1 gap-8">
-            <p className="text-gray font-secondary text-sm leading-relaxed">
-              {editionData[newId - 1].introText}
-            </p>
+            <p className="text-gray font-secondary text-sm leading-relaxed">{editionData[newId - 1].introText}</p>
           </div>
         </motion.section>
 
         {isCurrentEdition ? (
-          // Content for 2025 edition
           <>
             <motion.section
               initial={{ opacity: 0, y: 20 }}
@@ -221,15 +206,11 @@ export default function page() {
               transition={{ duration: 0.6, delay: 0.6 }}
               className="space-y-8"
             >
-              <h3 className="text-3xl sm:text-4xl font-bold text-[#FFD700]">
-                Preparati per la Phaser Game Jam 2025
-              </h3>
+              <h3 className="text-3xl sm:text-4xl font-bold text-[#FFD700]">Preparati per la Phaser Game Jam 2025</h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <Card className="bg-white/5 backdrop-blur-sm border-white/10">
                   <CardContent className="p-6">
-                    <h4 className="text-xl font-semibold mb-4 text-white">
-                      Cosa aspettarsi
-                    </h4>
+                    <h4 className="text-xl font-semibold mb-4 text-white">Cosa aspettarsi</h4>
                     <ul className="space-y-2 text-gray">
                       <li>Nuove sfide e temi innovativi</li>
                       <li>Mentori esperti del settore</li>
@@ -240,9 +221,7 @@ export default function page() {
                 </Card>
                 <Card className="bg-white/5 backdrop-blur-sm border-white/10">
                   <CardContent className="p-6">
-                    <h4 className="text-xl font-semibold mb-4 text-white">
-                      Come partecipare
-                    </h4>
+                    <h4 className="text-xl font-semibold mb-4 text-white">Come partecipare</h4>
                     <ol className="space-y-2 text-gray list-decimal list-inside">
                       <li>Forma il tuo team (max 5 persone)</li>
                       <li>Registrati sul nostro sito</li>
@@ -252,6 +231,95 @@ export default function page() {
                   </CardContent>
                 </Card>
               </div>
+            </motion.section>
+            <motion.section
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.7 }}
+              className="mt-12"
+            >
+              <Card className="relative overflow-hidden border-2 border-[#FFD700] bg-gradient-to-br from-black/80 to-[#6F6FFF]/20">
+                <div className="absolute top-0 left-0 w-full h-full">
+                  <div className="absolute top-0 left-0 w-full h-full bg-black/30" />
+                  <div className="absolute -top-20 -right-20 w-64 h-64 bg-[#FFD700]/20 rounded-full blur-3xl" />
+                  <div className="absolute -bottom-20 -left-20 w-64 h-64 bg-[#6F6FFF]/20 rounded-full blur-3xl" />
+                </div>
+                <CardContent className="relative p-8 z-10">
+                  <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+                    <div className="flex-1 text-center md:text-left">
+                      <motion.div
+                        initial={{ opacity: 0, scale: 0.9 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        transition={{ duration: 0.5, delay: 0.8 }}
+                        className="inline-block mb-4 px-4 py-2 bg-[#FFD700] text-black font-bold rounded-full"
+                      >
+                        TEMA UFFICIALE 2025
+                      </motion.div>
+                      <motion.h2
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6, delay: 0.9 }}
+                        className="text-5xl md:text-7xl font-bold text-white mb-4"
+                      >
+                        <span className="text-[#FFD700]">CAOS</span>
+                      </motion.h2>
+                      <motion.p
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6, delay: 1 }}
+                        className="text-gray-300 text-lg max-w-2xl"
+                      >
+                        Esplora l'imprevedibile, abbraccia il disordine e trasforma il caos in creatività. Quest'anno,
+                        la tua sfida sarà creare giochi che celebrano l'imprevedibilità e la bellezza nascosta nel
+                        disordine.
+                      </motion.p>
+                    </div>
+                    <motion.div
+                      initial={{ opacity: 0, rotate: -10, scale: 0.8 }}
+                      animate={{ opacity: 1, rotate: 0, scale: 1 }}
+                      transition={{
+                        duration: 0.8,
+                        delay: 1.1,
+                        type: "spring",
+                        stiffness: 100,
+                      }}
+                      className="relative w-48 h-48 md:w-64 md:h-64"
+                    >
+                      <div className="absolute inset-0 flex items-center justify-center">
+                        <div className="relative w-full h-full">
+                          <div className="absolute inset-0 flex items-center justify-center">
+                            <div className="w-full h-full relative">
+                              <div
+                                className="absolute top-0 left-0 w-16 h-16 bg-[#FFD700] rounded-full blur-md animate-pulse"
+                                style={{ animationDelay: "0s" }}
+                              />
+                              <div
+                                className="absolute bottom-0 right-0 w-20 h-20 bg-[#6F6FFF] rounded-full blur-md animate-pulse"
+                                style={{ animationDelay: "0.5s" }}
+                              />
+                              <div
+                                className="absolute top-1/2 right-0 w-12 h-12 bg-[#FF6F6F] rounded-full blur-md animate-pulse"
+                                style={{ animationDelay: "1s" }}
+                              />
+                              <div
+                                className="absolute bottom-1/4 left-1/4 w-14 h-14 bg-[#50FF50] rounded-full blur-md animate-pulse"
+                                style={{ animationDelay: "1.5s" }}
+                              />
+                              <div
+                                className="absolute top-1/4 right-1/4 w-10 h-10 bg-[#FF50FF] rounded-full blur-md animate-pulse"
+                                style={{ animationDelay: "2s" }}
+                              />
+                            </div>
+                          </div>
+                          <div className="absolute inset-0 flex items-center justify-center">
+                            <span className="text-8xl font-bold text-white">?!</span>
+                          </div>
+                        </div>
+                      </div>
+                    </motion.div>
+                  </div>
+                </CardContent>
+              </Card>
             </motion.section>
           </>
         ) : (
@@ -263,9 +331,7 @@ export default function page() {
               transition={{ duration: 0.6, delay: 0.6 }}
               className="space-y-8"
             >
-              <h3 className="text-3xl mt-[80px] sm:text-4xl font-bold text-white">
-                I Vincitori
-              </h3>
+              <h3 className="text-3xl mt-[80px] sm:text-4xl font-bold text-white">I Vincitori</h3>
             </motion.section>
 
             <motion.div
@@ -279,11 +345,7 @@ export default function page() {
                   key={index}
                   variants={item}
                   className={`flex flex-col ${
-                    index === 2
-                      ? "lg:scale-110 z-10"
-                      : index === 1 || index === 3
-                      ? "lg:scale-105 z-5"
-                      : ""
+                    index === 2 ? "lg:scale-110 z-10" : index === 1 || index === 3 ? "lg:scale-105 z-5" : ""
                   }`}
                 >
                   <Card className="bg-white/5 backdrop-blur-sm border-white/10 hover:border-white/20 transition-all duration-300 h-full group">
@@ -294,8 +356,8 @@ export default function page() {
                             index === 2
                               ? "w-24 h-24 lg:w-32 lg:h-32"
                               : index === 1 || index === 3
-                              ? "w-20 h-20 lg:w-24 lg:h-24"
-                              : "w-16 h-16 lg:w-20 lg:h-20"
+                                ? "w-20 h-20 lg:w-24 lg:h-24"
+                                : "w-16 h-16 lg:w-20 lg:h-20"
                           }`}
                         >
                           <Image
@@ -365,17 +427,11 @@ export default function page() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                   <Card className="bg-white/5 backdrop-blur-sm border-white/10">
                     <CardContent className="p-6">
-                      <h3 className="text-2xl font-semibold mb-4 text-white">
-                        Rimani Aggiornato
-                      </h3>
+                      <h3 className="text-2xl font-semibold mb-4 text-white">Rimani Aggiornato</h3>
                       <p className="text-gray mb-4">
-                        Iscriviti alla nostra newsletter per ricevere tutte le
-                        novità sulla Phaser Game Jam 2025.
+                        Iscriviti alla nostra newsletter per ricevere tutte le novità sulla Phaser Game Jam 2025.
                       </p>
-                      <form
-                        onSubmit={handleSubmit(processForm)}
-                        className="flex flex-col sm:flex-row gap-2"
-                      >
+                      <form onSubmit={handleSubmit(processForm)} className="flex flex-col sm:flex-row gap-2">
                         <input
                           type="email"
                           placeholder="La tua email"
@@ -383,9 +439,7 @@ export default function page() {
                           {...register("email")}
                         />
                         {errors.email?.message && (
-                          <p className="ml-1 mt-2 text-sm text-rose-400">
-                            {errors.email.message}
-                          </p>
+                          <p className="ml-1 mt-2 text-sm text-rose-400">{errors.email.message}</p>
                         )}
                         <button
                           type="submit"
@@ -399,27 +453,19 @@ export default function page() {
                   </Card>
                   <Card className="bg-white/5 backdrop-blur-sm border-white/10">
                     <CardContent className="p-6">
-                      <h3 className="text-2xl font-semibold mb-4 text-white">
-                        Date Importanti
-                      </h3>
+                      <h3 className="text-2xl font-semibold mb-4 text-white">Date Importanti</h3>
                       <ul className="space-y-2 text-gray-300">
                         <li className="flex items-center">
                           <Calendar className="mr-2 h-5 w-5 text-[#FFD700]" />
-                          <span className="text-gray">
-                            Apertura iscrizioni: 30 Settembre 2024
-                          </span>
+                          <span className="text-gray">Apertura iscrizioni: 30 Settembre 2024</span>
                         </li>
                         <li className="flex items-center">
                           <Calendar className="mr-2 h-5 w-5 text-[#FFD700]" />
-                          <span className="text-gray">
-                            Sessioni di formazione: Ottobre - Febbraio 2025
-                          </span>
+                          <span className="text-gray">Sessioni di formazione: Ottobre - Febbraio 2025</span>
                         </li>
                         <li className="flex items-center">
                           <Calendar className="mr-2 h-5 w-5 text-[#FFD700]" />
-                          <span className="text-gray">
-                            Game Jam: 28-29 Marzo 2025
-                          </span>
+                          <span className="text-gray">Game Jam: 28-29 Marzo 2025</span>
                         </li>
                       </ul>
                     </CardContent>
@@ -447,12 +493,8 @@ export default function page() {
                   >
                     {editionData[newId - 1].stats.map((stat, index) => (
                       <div key={stat.label} className="text-center">
-                        <div className="text-2xl sm:text-3xl font-bold text-[#FFD700]">
-                          {stat.value}
-                        </div>
-                        <div className="text-sm text-white/60 mt-1">
-                          {stat.label}
-                        </div>
+                        <div className="text-2xl sm:text-3xl font-bold text-[#FFD700]">{stat.value}</div>
+                        <div className="text-sm text-white/60 mt-1">{stat.label}</div>
                       </div>
                     ))}
                   </motion.div>
@@ -473,5 +515,6 @@ export default function page() {
         )}
       </motion.div>
     </main>
-  );
+  )
 }
+
