@@ -157,7 +157,7 @@ export default function Footer() {
         <p className="text-center sm:text-left">
           Developed by{" "}
           <Link
-            href="https://gerardo-portfolio-pearl.vercel.app/"
+            href="https://gerardonastri.tech/"
             className="hover:text-white transition-colors"
           >
             Gerardo Nastri
