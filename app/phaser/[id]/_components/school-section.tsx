@@ -31,7 +31,7 @@ const schools: School[] = [
   { name: 'ITI "ENRICO MEDI"', province: "Napoli" },
   { name: 'ITI "GALILEO FERRARIS"', province: "Napoli" },
   { name: 'POLISPECIALISTICO "SAN PAOLO" - SORRENTO', province: "Napoli" },
-  { name: 'ISIS "FERRARIS" - BUCCINO', province: "Caserta" },
+  { name: 'ISIS "FERRARIS-BUCCINI" - AVERSA', province: "Caserta" },
   { name: 'ITT "G. C. FALCO"', province: "Caserta" },
   { name: 'LICEO SCIENTIFICO "E. FERMI" - AVERSA', province: "Caserta" },
   { name: 'ITT "G.B. BOSCO LUCARELLI"', province: "Benevento" },
